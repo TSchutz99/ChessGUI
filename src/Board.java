@@ -78,6 +78,19 @@ public class Board extends JComponent{
         Piece_Graphics = new ArrayList();
         White_Pieces = new ArrayList();
         Black_Pieces = new ArrayList();
+
+        initGrid();
+
+        // these maybe edited later
+        this.setBackground(new Color(37,13,84));
+        this.setPreferredSize(new Dimension(520,520));
+        this.setMinimumSize(new Dimension(100, 100));
+        this.setMaximumSize(new Dimension(1000, 1000));
+
+        // will define ''mouseAdaptor, componentAdaptor, keyAdapter'' later
+        this.addMouseListener(mouseAdaptor);
+        this.addComponentListener(componentAdaptor);
+        this.addKeyListener(keyAdapter);
     }
 
 }
