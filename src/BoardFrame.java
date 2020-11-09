@@ -13,5 +13,6 @@ public class BoardFrame extends JFrame{
         this.setTitle("Chess");
         this.setResizable(false);
         component = new Board();
+        this.add(component, BorderLayout.CENTER);
     }
 }
