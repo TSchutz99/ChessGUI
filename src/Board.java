@@ -26,4 +26,16 @@ public class Board extends JComponent{
     private final int cols = 8;
     private Integer[][] BoardGrid;
     private String board_file_path = "images" + File.separator + "active_square.png";
+    private String active_square_file_path = "images" + File.separator + "active_square.png";
+
+    public void initGrid(){
+        for(int i = 0; i < rows; i++)
+            for(int j = 0; j < cols; i++)
+                BoardGrid[i][j] = 0;
+    }
+
+    //Image white_piece = loadImage("images/white_pieces/" + piece_name + ".png");
+    //Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
+
+    White_Piecs.add()
 }
