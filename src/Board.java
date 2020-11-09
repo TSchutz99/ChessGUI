@@ -36,7 +36,7 @@ public class Board extends JComponent{
         // Image white_piece = loadImage("images/white_pieces/" + piece_name + ".png");
         // Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
 
-        // The inner brackets will be filled after the pieces file is written
+        // The inner brackets will be filled after the Piece file is written
         White_Pieces.add(new King());
         White_Pieces.add(new Queen());
         White_Pieces.add(new Bishop());
