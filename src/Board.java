@@ -111,7 +111,7 @@ public class Board extends JComponent{
             Static_Shapes.add(new DrawingImage());
         }
         for(int i = 0; i < White_Pieces.size(); i++){
-            // .getX() and .getY() to be defined in pieces file
+            // .getX() and .getY() to be defined in Piece file
             int COL = White_Pieces.get(i).getX();
             int ROW = White_Pieces.get(i).getY();
                                                                                   // .getFilePath() will be defined in the pieces file
@@ -130,6 +130,6 @@ public class Board extends JComponent{
     }
 
     public Piece getPiece(){
-        // must write the Piece file before I continue with writing the file
+        // must write the Piece file before I continue with writing the file.
     }
 }
