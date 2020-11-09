@@ -110,6 +110,13 @@ public class Board extends JComponent{
             // DrawingImage to be filled later
             Static_Shapes.add(new DrawingImage());
         }
-        for(int i = 0; )
+        for(int i = 0; i < White_Pieces.size(); i++){
+            int COL = White_Pieces.get(i).getX();
+            int ROW = Black_Pieces.get(i).getY();
+                                                                                  // .getFilePath() will be defined in the pieces file
+            Image piece = loadImage("images" + File.separator + "white_pieces" + File.separator + White_Pieces.get(i).getFilePath());
+            // DrawingImage to be filled later
+            Piece_Graphics.add(new DrawingImage());
+        }
     }
 }
