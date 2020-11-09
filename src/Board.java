@@ -91,6 +91,13 @@ public class Board extends JComponent{
         this.addMouseListener(mouseAdaptor);
         this.addComponentListener(componentAdaptor);
         this.addKeyListener(keyAdapter);
+
+        this.setVisible(true);
+        this.requestFocus();
+        drawBoard();
     }
 
+    private void drawBoard(){
+
+    }
 }
