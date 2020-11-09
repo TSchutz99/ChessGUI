@@ -18,7 +18,7 @@ public class Board extends JComponent{
     public ArrayList<Piece> Black_Pieces;
 
     public ArrayList<DrawingShape> Static_Shapes;
-    public ArrayList<DrawingShape> Static_Graphics;
+    public ArrayList<DrawingShape> Piece_Graphics;
 
     public Piece Active_Piece;
 
@@ -36,9 +36,48 @@ public class Board extends JComponent{
         // Image white_piece = loadImage("images/white_pieces/" + piece_name + ".png");
         // Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
 
-        // The inner brackets will be filled after the pices file is written
-        White_Piecs.add(new King());
+        // The inner brackets will be filled after the pieces file is written
+        White_Pieces.add(new King());
+        White_Pieces.add(new Queen());
+        White_Pieces.add(new Bishop());
+        White_Pieces.add(new Bishop());
+        White_Pieces.add(new Knight());
+        White_Pieces.add(new Knight());
+        White_Pieces.add(new Rook());
+        White_Pieces.add(new Rook());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Pawn());
+
+        Black_Pieces.add(new King());
+        Black_Pieces.add(new Queen());
+        Black_Pieces.add(new Bishop());
+        Black_Pieces.add(new Bishop());
+        Black_Pieces.add(new Knight());
+        Black_Pieces.add(new Knight());
+        Black_Pieces.add(new Rook());
+        Black_Pieces.add(new Rook());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new Pawn());
     }
 
+    public Board(){
+        BoardGrid = new Integer[rows][cols];
+        Static_Shapes = new ArrayList();
+        Piece_Graphics = new ArrayList();
+        White_Pieces = new ArrayList();
+        Black_Pieces = new ArrayList();
+    }
 
 }
