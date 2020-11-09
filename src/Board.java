@@ -15,4 +15,14 @@ public class Board extends JComponent{
     private final int Square_Width = 65;
     public ArrayList<Piece> White_Pieces;
     public ArrayList<Piece> Black_Pieces;
+
+    public ArrayList<DrawingShape> Static_Shapes;
+    public ArrayList<DrawingShape> Static_Graphics;
+
+    public Piece Active_Piece;
+
+    private final int rows = 8;
+    private final int cols = 8;
+    private Integer[][] BoardGrid;
+
 }
