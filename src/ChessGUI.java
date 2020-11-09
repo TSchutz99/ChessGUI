@@ -7,7 +7,7 @@ public class ChessGUI {
     public BoardFrame boardFrame;
     public static void main(String[] args){
         ChessGUI gui = new ChessGUI();
-        gui.boardFrame =new boardFrame();
+        gui.boardFrame = new boardFrame();
         gui.boardFrame.setVisible(true);
     }
 }
