@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 
 /* BoardFrame.java
@@ -24,5 +25,5 @@ public class Board extends JComponent{
     private final int rows = 8;
     private final int cols = 8;
     private Integer[][] BoardGrid;
-
+    private String board_file_path = "images" + File.separator + "active_square.png";
 }
