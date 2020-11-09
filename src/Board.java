@@ -98,6 +98,18 @@ public class Board extends JComponent{
     }
 
     private void drawBoard(){
+        Piece_Graphics.clear();
+        Static_Shapes.clear();
 
+        // loadImage will be defined later
+        Image board = loadImage(board_file_path);
+        // DrawingImage will be defined later and filled at all relevant locations
+        Static_Shapes.add(new DrawingImage());
+        if(Active_Piece != null){
+            Image active_square = loadImage("images" + File.separator + "active_square.png");
+            // DrawingImage to be filled later
+            Static_Shapes.add(new DrawingImage());
+        }
+        for(int i = 0; )
     }
 }
