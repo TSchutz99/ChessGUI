@@ -14,5 +14,9 @@ public class BoardFrame extends JFrame{
         this.setResizable(false);
         component = new Board();
         this.add(component, BorderLayout.CENTER);
+
+        this.setLocation(200, 50);
+        this.pack();
+        this.setVisible(true);
     }
 }
