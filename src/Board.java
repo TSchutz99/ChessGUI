@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
+import ChessGUI.pieces.*;
 
 /* BoardFrame.java
  * By: Faun Schutz
