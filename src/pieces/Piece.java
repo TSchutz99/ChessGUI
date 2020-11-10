@@ -1,6 +1,6 @@
 package pieces;
 import ChessGUI.Board;
-/* BoardFrame.java
+/* Piece.java
  * By: Faun Schutz
  * Start: 10/11/2020
  * Finish:
