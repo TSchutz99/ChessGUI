@@ -37,8 +37,8 @@ public class Board extends JComponent{
         // Image white_piece = loadImage("images/white_pieces/" + piece_name + ".png");
         // Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
 
-        // The inner brackets will be filled after the Piece file is written
-        White_Pieces.add(new King());
+        // Need to test if this works
+        White_Pieces.add(new King(3,0,true,"King.png",this));
         White_Pieces.add(new Queen());
         White_Pieces.add(new Bishop());
         White_Pieces.add(new Bishop());
@@ -112,7 +112,6 @@ public class Board extends JComponent{
             Static_Shapes.add(new DrawingImage());
         }
         for(int i = 0; i < White_Pieces.size(); i++){
-            // .getX() and .getY() to be defined in Piece file
             int COL = White_Pieces.get(i).getX();
             int ROW = White_Pieces.get(i).getY();
                                                                                   // .getFilePath() will be defined in the pieces file
