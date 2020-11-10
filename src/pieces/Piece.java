@@ -16,7 +16,7 @@ public class Piece {
         this.is_white = is_white;
         setX(x);
         setY(y);
-        this.file_path = file_path;
+        setFile_path(file_path);
         this.board = board;
     }
 

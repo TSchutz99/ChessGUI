@@ -6,7 +6,7 @@ public class King extends Piece{
     }
 
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written.
+        // rules to be written here.
 
         return true;
     }
