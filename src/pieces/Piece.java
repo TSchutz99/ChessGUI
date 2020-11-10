@@ -2,7 +2,7 @@ package pieces;
 import ChessGUI.Board;
 /* BoardFrame.java
  * By: Faun Schutz
- * Start: 09/11/2020
+ * Start: 10/11/2020
  * Finish:
  */
 public class Piece {
