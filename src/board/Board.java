@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -152,6 +153,7 @@ public class Board extends JComponent{
 
         }
 
+        @Override
         public void mousePressed(MouseEvent e){
             int d_X = e.getX();
             int d_Y = e.getY();
@@ -183,6 +185,7 @@ public class Board extends JComponent{
                 Active_Piece.setX(Clicked_Column);
                 Active_Piece.setY(Clicked_Row);
 
+                // If piece is a pawn set has_moved to true
                 if(Active_Piece.getClass().equals(Pawn.class)){
                     Pawn castedPawn = (Pawn)(Active_Piece);
                     castedPawn.setHas_moved(true);
@@ -190,6 +193,16 @@ public class Board extends JComponent{
 
                 drawBoard();
             }
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e){
+        }
+        @Override
+        public void mouseReleased(MouseEvent e){
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e){
         }
     };
 }
