@@ -163,7 +163,17 @@ public class Board extends JComponent{
 
             Piece clicked_Piece = getPiece(Clicked_Column, Clicked_Row);
 
+            if(Active_Piece == null && clicked_Piece != null &&
+               ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack())))
+                Active_Piece = clicked_Piece;
 
+            else if(Active_Piece != null && Active_Piece.getX() == Clicked_Column && Active_Piece.getY() == Clicked_Row)
+                Active_Piece = null;
+
+            else if(Active_Piece != null && Active_Piece.canMove(Clicked_Column, Clicked_Row) &&
+                    ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))){
+
+            }
         }
     };
 }
