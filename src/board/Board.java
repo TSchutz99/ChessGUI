@@ -152,5 +152,18 @@ public class Board extends JComponent{
 
         }
 
-    }
+        public void mousePressed(MouseEvent e){
+            int d_X = e.getX();
+            int d_Y = e.getY();
+            int Clicked_Row = d_Y / Square_Width;
+            int Clicked_Column = d_X / Square_Width;
+            boolean is_Whites_Turn = true;
+            if(turnCounter % 2 == 1)
+                is_Whites_Turn = false;
+
+            Piece clicked_Piece = getPiece(Clicked_Column, Clicked_Row);
+
+
+        }
+    };
 }
