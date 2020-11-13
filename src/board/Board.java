@@ -210,6 +210,7 @@ public class Board extends JComponent{
     };
 
     private Image loadImage(String imageFile){
+        // https://www.w3schools.com/java/java_try_catch.asp
         try{
             return ImageIO.read(new File(imageFile));
         }
