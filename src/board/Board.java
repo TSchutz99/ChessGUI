@@ -1,6 +1,8 @@
 package board;
 
 import pieces.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -8,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /* board.BoardFrame.java
@@ -205,4 +208,13 @@ public class Board extends JComponent{
         public void mouseWheelMoved(MouseWheelEvent e){
         }
     };
+
+    private Image loadImage(String imageFile){
+        try{
+            return ImageIO.read(new File(imageFile));
+        }
+        catch(IOException e){
+            return NULL_IMAGE;
+        }
+    }
 }
