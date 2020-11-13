@@ -172,7 +172,12 @@ public class Board extends JComponent{
 
             else if(Active_Piece != null && Active_Piece.canMove(Clicked_Column, Clicked_Row) &&
                     ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))){
-
+                if(clicked_Piece != null){
+                    if(clicked_Piece.isWhite())
+                        White_Pieces.remove(clicked_Piece);
+                    else
+                        Black_Pieces.remove(clicked_Piece);
+                }
             }
         }
     };
