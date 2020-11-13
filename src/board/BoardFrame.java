@@ -1,7 +1,9 @@
+package board;
+
 import javax.swing.*;
 import java.awt.*;
 
-/* BoardFrame.java
+/* board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish:

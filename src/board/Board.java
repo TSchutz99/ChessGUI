@@ -1,11 +1,13 @@
-import ChessGUI.pieces.*;
+package board;
+
+import pieces.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 
-/* BoardFrame.java
+/* board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish:

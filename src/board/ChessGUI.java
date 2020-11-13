@@ -1,4 +1,6 @@
-/* ChessGUI.java
+package board;
+
+/* board.ChessGUI.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish:

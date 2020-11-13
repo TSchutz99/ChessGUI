@@ -1,5 +1,5 @@
 package pieces;
-import ChessGUI.Board;
+import board.Board;
 /* Bishop.java
  * By: Faun Schutz
  * Start: 10/11/2020
