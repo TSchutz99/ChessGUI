@@ -183,7 +183,12 @@ public class Board extends JComponent{
                 Active_Piece.setX(Clicked_Column);
                 Active_Piece.setY(Clicked_Row);
 
+                if(Active_Piece.getClass().equals(Pawn.class)){
+                    Pawn castedPawn = (Pawn)(Active_Piece);
+                    castedPawn.setHas_moved(true);
+                }
 
+                drawBoard();
             }
         }
     };
