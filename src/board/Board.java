@@ -209,6 +209,12 @@ public class Board extends JComponent{
         }
     };
 
+    private void adjustShapePosition(double dx, double dy){
+        // .adjustPosition() need to writ this
+        Static_Shapes.get(0).adjustPosition(dx, dy);
+        this.repaint();
+    }
+
     private Image loadImage(String imageFile){
         // https://www.w3schools.com/java/java_try_catch.asp
         try{
