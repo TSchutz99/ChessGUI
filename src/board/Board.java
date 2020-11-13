@@ -224,4 +224,16 @@ public class Board extends JComponent{
             return NULL_IMAGE;
         }
     }
+
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+
+        Graphics2D g2 = (Graphics2D)g;
+        drawBackground(g2);
+    }
+
+    private void drawBackground(Graphics2D g2){
+        g2.setColor(getBackground());
+        g2.fillRect(0 ,0, getWidth(), getHeight());
+    }
 }
