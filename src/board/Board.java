@@ -41,21 +41,21 @@ public class Board extends JComponent{
 
         // Need to test if this works
         White_Pieces.add(new King(3,0,true,"King.png",this));
-        White_Pieces.add(new Queen());
-        White_Pieces.add(new Bishop());
-        White_Pieces.add(new Bishop());
-        White_Pieces.add(new Knight());
-        White_Pieces.add(new Knight());
-        White_Pieces.add(new Rook());
-        White_Pieces.add(new Rook());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
-        White_Pieces.add(new Pawn());
+        White_Pieces.add(new Queen(4,0,true,"Queen.png",this));
+        White_Pieces.add(new Bishop(2,0,true,"Bishop.png",this));
+        White_Pieces.add(new Bishop(5,0,true,"Bishop.png",this));
+        White_Pieces.add(new Knight(1,0,true,"Knight.png",this));
+        White_Pieces.add(new Knight(6,0,true,"Knight.png",this));
+        White_Pieces.add(new Rook(0,0,true,"Rook.png",this));
+        White_Pieces.add(new Rook(7,0,true,"Rook.png",this));
+        White_Pieces.add(new Pawn(0,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(1,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(2,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(3,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(4,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(5,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(6,1,true,"Pawn.png",this));
+        White_Pieces.add(new Pawn(7,1,true,"Pawn.png",this));
 
         Black_Pieces.add(new King());
         Black_Pieces.add(new Queen());
