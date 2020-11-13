@@ -5,9 +5,7 @@ import pieces.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseWheelEvent;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -97,8 +95,8 @@ public class Board extends JComponent{
         this.setMaximumSize(new Dimension(1000, 1000));
 
         // will define ''mouseAdaptor, componentAdaptor, keyAdapter'' later
-        this.addMouseListener(mouseAdaptor);
-        this.addComponentListener(componentAdaptor);
+        this.addMouseListener(mouseAdapter);
+        this.addComponentListener(componentAdapter);
         this.addKeyListener(keyAdapter);
 
         this.setVisible(true);
@@ -244,7 +242,35 @@ public class Board extends JComponent{
             shape.draw(g2);
     }
 
+    private ComponentAdapter componentAdapter = new ComponentAdapter(){
+        @Override
+        public void componentHidden(ComponentEvent e){
+        }
+        @Override
+        public void componentMoved(ComponentEvent e){
+        }
+        @Override
+        public void componentResized(ComponentEvent e){
+        }
+        @Override
+        public void componentShown(ComponentEvent e){
+        }
+    };
+
+    private KeyAdapter keyAdapter = new KeyAdapter(){
+        @Override
+        public void keyPressed(KeyEvent e){
+        }
+        @Override
+        public void keyReleased(KeyEvent e){
+        }
+        @Override
+        public void keyTyped(KeyEvent e){
+        }
+    };
+
     interface DrawingShape{
+        //
         boolean contains(Graphics2D g2, double x, double y);
         void adjustPosition(double dx, double dy);
         void draw(Graphics2D g2);
