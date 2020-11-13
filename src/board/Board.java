@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Board extends JComponent{
     public int turnCounter = 0;
-    private static Image NULL_IMAGE =new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
+    private static Image NULL_IMAGE = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
 
     private final int Square_Width = 65;
     public ArrayList<Piece> White_Pieces;
@@ -131,7 +131,16 @@ public class Board extends JComponent{
         this.repaint();
     }
 
-    public Piece getPiece(){
-        // must write the Piece file before I continue with writing the file.
+    public Piece getPiece(int x, int y){
+        for(Piece p : White_Pieces){
+            if(p.getX() == x && p.getY() == y)
+                return p;
+        }
+
+        for(Piece p : Black_Pieces){
+            if(p.getX() == x && p.getY() == y)
+                return p;
+        }
+        return null;
     }
 }
