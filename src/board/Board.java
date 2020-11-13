@@ -3,6 +3,8 @@ package board;
 import pieces.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -142,5 +144,13 @@ public class Board extends JComponent{
                 return p;
         }
         return null;
+    }
+
+    private MouseAdapter mouseAdapter = new MouseAdapter(){
+        @Override
+        public void mouseClicked(MouseEvent e){
+
+        }
+
     }
 }
