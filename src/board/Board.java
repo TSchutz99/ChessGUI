@@ -236,4 +236,17 @@ public class Board extends JComponent{
         g2.setColor(getBackground());
         g2.fillRect(0 ,0, getWidth(), getHeight());
     }
+
+    private void drawShapes(Graphics2D g2){
+        for(DrawingShape shape : Static_Shapes)
+            shape.draw(g2);
+        for(DrawingShape shape : Piece_Graphics)
+            shape.draw(g2);
+    }
+
+    interface DrawingShape{
+        boolean contains(Graphics2D g2, double x, double y);
+        void adjustPosition(double dx, double dy);
+        void draw(Graphics2D g2);
+    }
 }
