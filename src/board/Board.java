@@ -1,11 +1,11 @@
 package board;
 
 import pieces.*;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class Board extends JComponent{
     public int turnCounter = 0;
-    private static Image NULL_IMAGE = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
+    private static final Image NULL_IMAGE = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
 
     private final int Square_Width = 65;
     public ArrayList<Piece> White_Pieces;
@@ -31,9 +31,9 @@ public class Board extends JComponent{
 
     private final int rows = 8;
     private final int cols = 8;
-    private Integer[][] BoardGrid;
-    private String board_file_path = "images" + File.separator + "active_square.png";
-    private String active_square_file_path = "images" + File.separator + "active_square.png";
+    private final Integer[][] BoardGrid;
+    private final String board_file_path = "images" + File.separator + "active_square.png";
+    private final String active_square_file_path = "images" + File.separator + "active_square.png";
 
     public void initGrid(){
         for(int i = 0; i < rows; i++)
@@ -61,22 +61,22 @@ public class Board extends JComponent{
         White_Pieces.add(new Pawn(6,1,true,"Pawn.png",this));
         White_Pieces.add(new Pawn(7,1,true,"Pawn.png",this));
 
-        Black_Pieces.add(new King());
-        Black_Pieces.add(new Queen());
-        Black_Pieces.add(new Bishop());
-        Black_Pieces.add(new Bishop());
-        Black_Pieces.add(new Knight());
-        Black_Pieces.add(new Knight());
-        Black_Pieces.add(new Rook());
-        Black_Pieces.add(new Rook());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
-        Black_Pieces.add(new Pawn());
+        Black_Pieces.add(new King(3,7,false,"King.png",this));
+        Black_Pieces.add(new Queen(4,7,false,"Queen.png",this));
+        Black_Pieces.add(new Bishop(2,7,false,"Bishop.png",this));
+        Black_Pieces.add(new Bishop(5,7,false,"Bishop.png",this));
+        Black_Pieces.add(new Knight(1,7,false,"Knight.png",this));
+        Black_Pieces.add(new Knight(6,7,false,"Knight.png",this));
+        Black_Pieces.add(new Rook(0,7,false,"Rook.png",this));
+        Black_Pieces.add(new Rook(7,7,false,"Rook.png",this));
+        Black_Pieces.add(new Pawn(0,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(1,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(2,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(3,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(4,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(5,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(6,6,false,"Pawn.png",this));
+        Black_Pieces.add(new Pawn(7,6,false,"Pawn.png",this));
     }
 
     public Board(){
@@ -89,18 +89,17 @@ public class Board extends JComponent{
         initGrid();
 
         // these maybe edited later
-        this.setBackground(new Color(37,13,84));
-        this.setPreferredSize(new Dimension(520,520));
-        this.setMinimumSize(new Dimension(100, 100));
-        this.setMaximumSize(new Dimension(1000, 1000));
+        setBackground(new Color(37,13,84));
+        setPreferredSize(new Dimension(520,520));
+        setMinimumSize(new Dimension(100, 100));
+        setMaximumSize(new Dimension(1000, 1000));
 
-        // will define ''mouseAdaptor, componentAdaptor, keyAdapter'' later
-        this.addMouseListener(mouseAdapter);
-        this.addComponentListener(componentAdapter);
-        this.addKeyListener(keyAdapter);
+        addMouseListener(mouseAdapter);
+        addComponentListener(componentAdapter);
+        addKeyListener(keyAdapter);
 
-        this.setVisible(true);
-        this.requestFocus();
+        setVisible(true);
+        requestFocus();
         drawBoard();
     }
 
@@ -108,31 +107,29 @@ public class Board extends JComponent{
         Piece_Graphics.clear();
         Static_Shapes.clear();
 
-        // loadImage will be defined later
         Image board = loadImage(board_file_path);
-        // DrawingImage will be defined later and filled at all relevant locations
-        Static_Shapes.add(new DrawingImage());
+
+        Static_Shapes.add(new DrawingImage(board, new Rectangle2D.Double(0, 0, board.getWidth(null), board.getHeight(null))));
         if(Active_Piece != null){
             Image active_square = loadImage("images" + File.separator + "active_square.png");
-            // DrawingImage to be filled later
-            Static_Shapes.add(new DrawingImage());
+            Static_Shapes.add(new DrawingImage(active_square, new Rectangle2D.Double(Square_Width * Active_Piece.getX(), Square_Width * Active_Piece.getY(),
+                    active_square.getWidth(null), active_square.getHeight(null))));
         }
         for(int i = 0; i < White_Pieces.size(); i++){
             int COL = White_Pieces.get(i).getX();
             int ROW = White_Pieces.get(i).getY();
                                                                                   // .getFilePath() will be defined in the pieces file
-            Image piece = loadImage("images" + File.separator + "white_pieces" + File.separator + White_Pieces.get(i).getFilePath());
-            // DrawingImage to be filled later
-            Piece_Graphics.add(new DrawingImage());
+            Image piece = loadImage("images" + File.separator + "white_pieces" + File.separator + White_Pieces.get(i).getFile_Path());
+            Piece_Graphics.add(new DrawingImage(piece, new Rectangle2D.Double(Square_Width * COL, Square_Width * ROW, piece.getWidth(null), piece.getHeight(null))));
         }
         for(int i = 0; i < Black_Pieces.size(); i++){
             int COL = Black_Pieces.get(i).getX();
             int ROW = Black_Pieces.get(i).getX();
-            Image piece = loadImage("images" + File.separator + "black_pieces" + File.separator + Black_Pieces.get(i).getFilePath());
-            // DrawingImage to be filled later
-            Piece_Graphics.add(new DrawingImage());
+
+            Image piece = loadImage("images" + File.separator + "black_pieces" + File.separator + Black_Pieces.get(i).getFile_Path());
+            Piece_Graphics.add(new DrawingImage(piece, new Rectangle2D.Double(Square_Width * COL, Square_Width * ROW, piece.getWidth(null), piece.getHeight(null))));
         }
-        this.repaint();
+        repaint();
     }
 
     public Piece getPiece(int x, int y){
@@ -148,7 +145,7 @@ public class Board extends JComponent{
         return null;
     }
 
-    private MouseAdapter mouseAdapter = new MouseAdapter(){
+    private final MouseAdapter mouseAdapter = new MouseAdapter(){
         @Override
         public void mouseClicked(MouseEvent e){
 
@@ -242,7 +239,7 @@ public class Board extends JComponent{
             shape.draw(g2);
     }
 
-    private ComponentAdapter componentAdapter = new ComponentAdapter(){
+    private final ComponentAdapter componentAdapter = new ComponentAdapter(){
         @Override
         public void componentHidden(ComponentEvent e){
         }
@@ -257,7 +254,7 @@ public class Board extends JComponent{
         }
     };
 
-    private KeyAdapter keyAdapter = new KeyAdapter(){
+    private final KeyAdapter keyAdapter = new KeyAdapter(){
         @Override
         public void keyPressed(KeyEvent e){
         }
@@ -274,5 +271,34 @@ public class Board extends JComponent{
         boolean contains(Graphics2D g2, double x, double y);
         void adjustPosition(double dx, double dy);
         void draw(Graphics2D g2);
+    }
+
+    class DrawingImage implements DrawingShape{
+        public Image image;
+        public Rectangle2D rect;
+
+        public DrawingImage(Image image, Rectangle2D rect){
+            this.image = image;
+            this.rect = rect;
+        }
+
+        @Override
+        public boolean contains(Graphics2D g2, double x, double y){
+            return rect.contains(x, y);
+        }
+
+        @Override
+        public void adjustPosition(double dx, double dy){
+            // https://docs.oracle.com/javase/7/docs/api/java/awt/geom/Rectangle2D.Double.html
+            rect.setRect(rect.getX() + dx, rect.getY() + dy, rect.getWidth(), rect.getHeight());
+        }
+
+        @Override
+        public void draw(Graphics2D g2){
+            // https://docs.oracle.com/javase/7/docs/api/java/awt/Shape.html
+            Rectangle2D bounds = rect.getBounds2D();
+            g2.drawImage(image, (int)bounds.getMinX(), (int)bounds.getMinY(), (int)bounds.getMaxX(), (int)bounds.getMaxY(),
+                                            0, 0, image.getWidth(null), image.getHeight(null), null);
+        }
     }
 }

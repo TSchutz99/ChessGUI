@@ -9,16 +9,15 @@ import java.awt.*;
  * Finish:
  */
 public class BoardFrame extends JFrame{
-    Component component;
+    Component component = new Board();
     public BoardFrame(){
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.setTitle("Chess");
-        this.setResizable(false);
-        component = new Board();
-        this.add(component, BorderLayout.CENTER);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setTitle("Chess");
+        setResizable(false);
+        add(component, BorderLayout.CENTER);
 
-        this.setLocation(200, 50);
-        this.pack();
-        this.setVisible(true);
+        setLocation(200, 50);
+        pack();
+        setVisible(true);
     }
 }
