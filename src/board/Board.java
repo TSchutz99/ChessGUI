@@ -40,8 +40,8 @@ public class Board extends JComponent{
             for(int j = 0; j < cols; i++)
                 BoardGrid[i][j] = 0;
 
-        // Image white_piece = loadImage("images/white_pieces/" + piece_name + ".png");
-        // Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
+        // Image white_piece = loadImage("images/white_pieces/" + piece_name);
+        // Image black_piece = loadImage("images/black_pieces/" + piece_name);
 
         // Need to test if this works
         White_Pieces.add(new King(3,0,true,"King.png",this));
