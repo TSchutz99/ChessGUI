@@ -113,8 +113,7 @@ public class Board extends JComponent{
         Static_Shapes.add(new DrawingImage(board, new Rectangle2D.Double(0, 0, board.getWidth(null), board.getHeight(null))));
         if(Active_Piece != null){
             Image active_square = loadImage("images" + File.separator + "active_square.png");
-            Static_Shapes.add(new DrawingImage(active_square, new Rectangle2D.Double(Square_Width * Active_Piece.getX(), Square_Width * Active_Piece.getY(),
-                    active_square.getWidth(null), active_square.getHeight(null))));
+            Static_Shapes.add(new DrawingImage(active_square, new Rectangle2D.Double(Square_Width * Active_Piece.getX(), Square_Width * Active_Piece.getY(), active_square.getWidth(null), active_square.getHeight(null))));
         }
         for(int i = 0; i < White_Pieces.size(); i++){
             int COL = White_Pieces.get(i).getX();
@@ -165,14 +164,14 @@ public class Board extends JComponent{
             Piece clicked_Piece = getPiece(Clicked_Column, Clicked_Row);
 
             if(Active_Piece == null && clicked_Piece != null &&
-               ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack())))
+                    ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && clicked_Piece.isBlack())))
                 Active_Piece = clicked_Piece;
 
             else if(Active_Piece != null && Active_Piece.getX() == Clicked_Column && Active_Piece.getY() == Clicked_Row)
                 Active_Piece = null;
 
             else if(Active_Piece != null && Active_Piece.canMove(Clicked_Column, Clicked_Row) &&
-                    ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))){
+                    ((is_Whites_Turn && Active_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))){
                 // If piece is there, remove it so we can be there
                 if(clicked_Piece != null){
                     if(clicked_Piece.isWhite())
@@ -190,8 +189,11 @@ public class Board extends JComponent{
                     castedPawn.setHas_moved(true);
                 }
 
-                drawBoard();
+                Active_Piece = null;
+                turnCounter++;
             }
+
+            drawBoard();
         }
 
         @Override
