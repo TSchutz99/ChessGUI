@@ -221,6 +221,7 @@ public class Board extends JComponent{
         }
     }
 
+    @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
 
@@ -268,7 +269,7 @@ public class Board extends JComponent{
         }
     };
 
-    interface DrawingShape{
+    interface DrawingShape {
         //
         boolean contains(Graphics2D g2, double x, double y);
         void adjustPosition(double dx, double dy);

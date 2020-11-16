@@ -14,9 +14,9 @@ public class Piece {
 
     public Piece(int x, int y, boolean is_white, String file_path, Board board){
         this.is_white = is_white;
-        setX(x);
-        setY(y);
-        setFile_Path(file_Path);
+        this.x = x;
+        this.y = y;
+        this.file_Path = file_path;
         this.board = board;
     }
 
