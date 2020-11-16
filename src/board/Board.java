@@ -37,7 +37,7 @@ public class Board extends JComponent{
 
     public void initGrid(){
         for(int i = 0; i < rows; i++)
-            for(int j = 0; j < cols; i++)
+            for(int j = 0; j < cols; j++)
                 BoardGrid[i][j] = 0;
 
         // Image white_piece = loadImage("images/white_pieces/" + piece_name);
