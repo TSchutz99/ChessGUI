@@ -10,6 +10,7 @@ public class Bishop extends Piece{
         super(x, y, is_white, file_path, board);
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder can move as many squares diagonally as it wants without jumping over another piece

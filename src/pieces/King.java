@@ -10,6 +10,7 @@ public class King extends Piece{
         super(x, y, is_white, file_path, board);
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder can move one square up, right, left, or down, or diagonally

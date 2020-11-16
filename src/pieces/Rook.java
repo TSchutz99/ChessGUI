@@ -10,6 +10,7 @@ public class Rook extends Piece{
         super(x, y, is_white, file_path, board);
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder can move as many squares as he wants either forward, or sideways without jumping any pieces

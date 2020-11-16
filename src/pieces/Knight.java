@@ -10,6 +10,7 @@ public class Knight extends Piece{
         super(x, y, is_white, file_path, board);
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder knight moves in an L shape.

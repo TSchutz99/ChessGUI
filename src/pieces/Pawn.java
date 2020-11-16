@@ -21,6 +21,7 @@ public class Pawn extends Piece{
         return has_moved;
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder if pawn has not moved yet, it can move two spaces forward. Otherwise, it only moves one space.

@@ -10,6 +10,7 @@ public class Queen extends Piece{
         super(x, y, is_white, file_path, board);
     }
 
+    @Override
     public boolean canMove(int destination_x, int destination_y){
         // rules to be written here.
         // reminder Queen can move backward, sideways, or diagonally, without jumping over any pieces.

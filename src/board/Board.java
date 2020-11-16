@@ -125,10 +125,10 @@ public class Board extends JComponent{
         }
         for(int i = 0; i < Black_Pieces.size(); i++){
             int COL = Black_Pieces.get(i).getX();
-            int ROW = Black_Pieces.get(i).getX();
+            int ROW = Black_Pieces.get(i).getY();
 
             Image piece = loadImage("images" + File.separator + "black_pieces" + File.separator + Black_Pieces.get(i).getFile_Path());
-            Piece_Graphics.add(new DrawingImage(piece, new Rectangle2D.Double(Square_Width * COL, Square_Width * ROW, piece.getWidth(null), piece.getHeight(null))));
+            Piece_Graphics.add(new DrawingImage(piece, new Rectangle2D.Double(Square_Width*COL,Square_Width*ROW, piece.getWidth(null), piece.getHeight(null))));
         }
         repaint();
     }
