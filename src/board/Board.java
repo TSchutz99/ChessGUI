@@ -118,7 +118,7 @@ public class Board extends JComponent{
         for(int i = 0; i < White_Pieces.size(); i++){
             int COL = White_Pieces.get(i).getX();
             int ROW = White_Pieces.get(i).getY();
-                                                                                  // .getFilePath() will be defined in the pieces file
+
             Image piece = loadImage("images" + File.separator + "white_pieces" + File.separator + White_Pieces.get(i).getFile_Path());
             Piece_Graphics.add(new DrawingImage(piece, new Rectangle2D.Double(Square_Width * COL, Square_Width * ROW, piece.getWidth(null), piece.getHeight(null))));
         }
