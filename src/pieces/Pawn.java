@@ -10,6 +10,7 @@ public class Pawn extends Piece{
 
     public Pawn(int x, int y, boolean is_white, String file_path, Board board){
         super(x, y, is_white, file_path, board);
+        has_moved = false;
     }
 
     public void setHas_moved(boolean has_moved) {
