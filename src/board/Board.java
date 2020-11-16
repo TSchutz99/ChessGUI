@@ -33,7 +33,7 @@ public class Board extends JComponent{
     private final int cols = 8;
     private final Integer[][] BoardGrid;
     private final String board_file_path = "images" + File.separator + "active_square.png";
-    private final String active_square_file_path = "images" + File.separator + "active_square.png";
+    private final String active_square_file_path = "images" + File.separator + "active_square.png"; // Will be used later
 
     public void initGrid(){
         for(int i = 0; i < rows; i++)
