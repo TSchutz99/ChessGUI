@@ -32,7 +32,7 @@ public class Board extends JComponent{
     private final int rows = 8;
     private final int cols = 8;
     private final Integer[][] BoardGrid;
-    private final String board_file_path = "images" + File.separator + "active_square.png";
+    private final String board_file_path = "images" + File.separator + "board.png";
     private final String active_square_file_path = "images" + File.separator + "active_square.png"; // Will be used later
 
     public void initGrid(){
@@ -106,6 +106,7 @@ public class Board extends JComponent{
     private void drawBoard(){
         Piece_Graphics.clear();
         Static_Shapes.clear();
+        // initGrid();
 
         Image board = loadImage(board_file_path);
 
@@ -204,10 +205,10 @@ public class Board extends JComponent{
         }
     };
 
-    private void adjustShapePosition(double dx, double dy){
+    private void adjustShapePositions(double dx, double dy){
         // .adjustPosition() need to writ this
         Static_Shapes.get(0).adjustPosition(dx, dy);
-        this.repaint();
+        repaint();
     }
 
     private Image loadImage(String imageFile){
@@ -225,6 +226,7 @@ public class Board extends JComponent{
 
         Graphics2D g2 = (Graphics2D)g;
         drawBackground(g2);
+        drawShapes(g2);
     }
 
     private void drawBackground(Graphics2D g2){
