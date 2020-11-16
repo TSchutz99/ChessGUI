@@ -44,39 +44,39 @@ public class Board extends JComponent{
         // Image black_piece = loadImage("images/black_pieces/" + piece_name + ".png");
 
         // Need to test if this works
-        White_Pieces.add(new King(3,0,true,"King.png",this));
-        White_Pieces.add(new Queen(4,0,true,"Queen.png",this));
-        White_Pieces.add(new Bishop(2,0,true,"Bishop.png",this));
-        White_Pieces.add(new Bishop(5,0,true,"Bishop.png",this));
-        White_Pieces.add(new Knight(1,0,true,"Knight.png",this));
-        White_Pieces.add(new Knight(6,0,true,"Knight.png",this));
-        White_Pieces.add(new Rook(0,0,true,"Rook.png",this));
-        White_Pieces.add(new Rook(7,0,true,"Rook.png",this));
-        White_Pieces.add(new Pawn(0,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(1,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(2,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(3,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(4,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(5,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(6,1,true,"Pawn.png",this));
-        White_Pieces.add(new Pawn(7,1,true,"Pawn.png",this));
+        White_Pieces.add(new King(3,0,true,"images/white_pieces/King.png",this));
+        White_Pieces.add(new Queen(4,0,true,"images/white_pieces/Queen.png",this));
+        White_Pieces.add(new Bishop(2,0,true,"images/white_pieces/Bishop.png",this));
+        White_Pieces.add(new Bishop(5,0,true,"images/white_pieces/Bishop.png",this));
+        White_Pieces.add(new Knight(1,0,true,"images/white_pieces/Knight.png",this));
+        White_Pieces.add(new Knight(6,0,true,"images/white_pieces/Knight.png",this));
+        White_Pieces.add(new Rook(0,0,true,"images/white_pieces/Rook.png",this));
+        White_Pieces.add(new Rook(7,0,true,"images/white_pieces/Rook.png",this));
+        White_Pieces.add(new Pawn(0,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(1,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(2,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(3,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(4,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(5,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(6,1,true,"images/white_pieces/Pawn.png",this));
+        White_Pieces.add(new Pawn(7,1,true,"images/white_pieces/Pawn.png",this));
 
-        Black_Pieces.add(new King(3,7,false,"King.png",this));
-        Black_Pieces.add(new Queen(4,7,false,"Queen.png",this));
-        Black_Pieces.add(new Bishop(2,7,false,"Bishop.png",this));
-        Black_Pieces.add(new Bishop(5,7,false,"Bishop.png",this));
-        Black_Pieces.add(new Knight(1,7,false,"Knight.png",this));
-        Black_Pieces.add(new Knight(6,7,false,"Knight.png",this));
-        Black_Pieces.add(new Rook(0,7,false,"Rook.png",this));
-        Black_Pieces.add(new Rook(7,7,false,"Rook.png",this));
-        Black_Pieces.add(new Pawn(0,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(1,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(2,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(3,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(4,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(5,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(6,6,false,"Pawn.png",this));
-        Black_Pieces.add(new Pawn(7,6,false,"Pawn.png",this));
+        Black_Pieces.add(new King(3,7,false,"images/black_pieces/King.png",this));
+        Black_Pieces.add(new Queen(4,7,false,"images/black_pieces/Queen.png",this));
+        Black_Pieces.add(new Bishop(2,7,false,"images/black_pieces/Bishop.png",this));
+        Black_Pieces.add(new Bishop(5,7,false,"images/black_pieces/Bishop.png",this));
+        Black_Pieces.add(new Knight(1,7,false,"images/black_pieces/Knight.png",this));
+        Black_Pieces.add(new Knight(6,7,false,"images/black_pieces/Knight.png",this));
+        Black_Pieces.add(new Rook(0,7,false,"images/black_pieces/Rook.png",this));
+        Black_Pieces.add(new Rook(7,7,false,"images/black_pieces/Rook.png",this));
+        Black_Pieces.add(new Pawn(0,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(1,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(2,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(3,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(4,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(5,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(6,6,false,"images/black_pieces/Pawn.png",this));
+        Black_Pieces.add(new Pawn(7,6,false,"images/black_pieces/Pawn.png",this));
     }
 
     public Board(){
