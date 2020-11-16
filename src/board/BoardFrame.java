@@ -9,11 +9,12 @@ import java.awt.*;
  * Finish:
  */
 public class BoardFrame extends JFrame{
-    Component component = new Board();
+    Component component;
     public BoardFrame(){
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Chess");
         setResizable(false);
+        component = new Board();
         add(component, BorderLayout.CENTER);
 
         setLocation(200, 50);
