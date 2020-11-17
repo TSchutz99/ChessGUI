@@ -22,23 +22,22 @@ public class Bishop extends Piece{
                 return false;
         }
 
-        // This keeps the Bishop moving in a diagonal lines as its piece only can.
+        // This keeps the Bishop moving in diagonal lines as its piece only can and from jumping over other pieces.
         if(getX() == destination_x || getY() == destination_y)
             return false;
 
-        // This keeps the Bishop from jumping other pieces.
         String direction = "";
-        if(this.getX() > destination_x && this.getY() > destination_y)
+        if(getX() > destination_x && getY() > destination_y)
             direction = "north-west";
-        else if(this.getX() > destination_x && this.getY() < destination_y)
+        else if(getX() > destination_x && getY() < destination_y)
             direction = "south-west";
-        else if(this.getX() < destination_x && this.getY() < destination_y)
+        else if(getX() < destination_x && getY() < destination_y)
             direction = "south-east";
-        else if(this.getX() < destination_x && this.getY() > destination_y)
+        else if(getX() < destination_x && getY() > destination_y)
             direction = "north-east";
 
         // For test proposes
-        System.out.println(direction);
+        // System.out.println(direction);
 
         if(direction.equals("north-west")){
             int distance = getX() - destination_x;

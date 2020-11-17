@@ -22,7 +22,7 @@ public class Rook extends Piece{
                 return false;
         }
 
-        // This keeps the rook moving in a straight line as its piece only can.
+        // This keeps the rook moving in a straight line as this piece only can.
         if(getX() != destination_x && getY() != destination_y)
             return false;
 
