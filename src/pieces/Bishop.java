@@ -38,7 +38,7 @@ public class Bishop extends Piece{
             direction = "north-east";
 
         // For test proposes
-        System.out.println(direction);
+        // System.out.println(direction);
 
         if(direction.equals("north-west")){
             int distance = getX() - destination_x;
