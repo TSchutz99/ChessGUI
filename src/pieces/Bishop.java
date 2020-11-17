@@ -3,7 +3,7 @@ import board.Board;
 /* Bishop.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish:
+ * Finish: 17/11/2020
  */
 public class Bishop extends Piece{
     public Bishop(int x, int y, boolean is_white, String file_path, Board board){
