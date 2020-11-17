@@ -58,6 +58,26 @@ public class Rook extends Piece{
                     return false;
             }
         }
+        if(direction.equals("east")){
+            int spaces_to_move = Math.abs(destination_x - getX());
+
+            for(int i = 1; i < spaces_to_move; i++){
+                Piece p = board.getPiece(getX() + i, getY());
+
+                if(p != null)
+                    return false;
+            }
+        }
+        if(direction.equals("west")){
+            int spaces_to_move = Math.abs(destination_x - getX());
+
+            for(int i = 1; i < spaces_to_move; i++){
+                Piece p = board.getPiece(getX() - i, getY());
+
+                if(p != null)
+                    return false;
+            }
+        }
 
 
         return true;
