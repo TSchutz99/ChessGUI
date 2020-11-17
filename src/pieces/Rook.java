@@ -24,7 +24,7 @@ public class Rook extends Piece{
         }
 
         // This keeps the rook moving in a straight line as its piece only can
-        if(this.getX() != destination_x || this.getY() != destination_y)
+        if(this.getX() != destination_x && this.getY() != destination_y)
             return false;
 
         return true;
