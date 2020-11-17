@@ -38,51 +38,59 @@ public class Bishop extends Piece{
             direction = "north-east";
 
         // For test proposes
-        // System.out.println(direction);
+        System.out.println(direction);
 
         if(direction.equals("north-west")){
             int distance = getX() - destination_x;
 
-            if(destination_x == getX() - distance || destination_y == getY() - distance)
-                for(int i = 1; i < distance; i++) {
-                    Piece p = board.getPiece(getX() - i, getY() - i);
+            if(destination_x != getX() - distance || destination_y != getY() - distance)
+                return false;
 
-                    if(p != null)
-                        return false;
-                }
+            for(int i = 1; i < distance; i++) {
+                Piece p = board.getPiece(getX() - i, getY() - i);
+
+                if(p != null)
+                    return false;
+            }
         }
         else if(direction.equals("south-west")){
             int distance = getX() - destination_x;
 
-            if(destination_x == getX() - distance || destination_y == getY() + distance)
-                for(int i = 1; i < distance; i++) {
-                    Piece p = board.getPiece(getX() - i, getY() + i);
+            if(destination_x != getX() - distance || destination_y != getY() + distance)
+                return false;
 
-                    if(p != null)
-                        return false;
-                }
+            for(int i = 1; i < distance; i++) {
+                Piece p = board.getPiece(getX() - i, getY() + i);
+
+                if(p != null)
+                    return false;
+            }
         }
         else if(direction.equals("south-east")){
             int distance = destination_x - getX();
 
-            if(destination_x == getX() + distance || destination_y == getY() + distance)
-                for(int i = 1; i < distance; i++) {
-                    Piece p = board.getPiece(getX() + i, getY() + i);
+            if(destination_x != getX() + distance || destination_y != getY() + distance)
+                return false;
 
-                    if(p != null)
-                        return false;
-                }
+            for(int i = 1; i < distance; i++) {
+                Piece p = board.getPiece(getX() + i, getY() + i);
+
+                if(p != null)
+                    return false;
+            }
         }
         else if(direction.equals("north-east")){
             int distance = destination_x - getX();
 
-            if(destination_x == getX() + distance || destination_y == getY() - distance)
-                for(int i = 1; i < distance; i++) {
-                    Piece p = board.getPiece(getX() + i, getY() - i);
+            if(destination_x != getX() + distance || destination_y != getY() - distance)
+                return false;
 
-                    if(p != null)
-                        return false;
-                }
+            for(int i = 1; i < distance; i++) {
+                Piece p = board.getPiece(getX() + i, getY() - i);
+
+                if(p != null)
+                    return false;
+            }
         }
 
         return true;
