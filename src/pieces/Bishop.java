@@ -22,7 +22,11 @@ public class Bishop extends Piece{
                 return false;
         }
 
-        // This keeps the Bishop moving in a diagonal lines as its piece only can, and from jumping other pieces.
+        // This keeps the Bishop moving in a diagonal lines as its piece only can.
+        if(getX() == destination_x || getY() == destination_y)
+            return false;
+
+        // This keeps the Bishop from jumping other pieces.
         String direction = "";
         if(this.getX() > destination_x && this.getY() > destination_y)
             direction = "north-west";
