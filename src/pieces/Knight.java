@@ -12,11 +12,18 @@ public class Knight extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
         // reminder knight moves in an L shape.
         //  * *       * * *           *       *
         //  *             *       * * *       *
         //  *                                 * *
+        // This Prevents the Rook from taking his own pieces.
+        Piece possiblePiece = board.getPiece(destination_x, destination_y);
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && isWhite())
+                return false;
+            if(possiblePiece.isBlack() && isBlack())
+                return false;
+        }
 
         return true;
     }
