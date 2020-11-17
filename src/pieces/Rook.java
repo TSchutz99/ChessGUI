@@ -3,14 +3,14 @@ import board.Board;
 /* Rook.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish:
+ * Finish: 17/11/2020
  */
 public class Rook extends Piece{
     public Rook(int x, int y, boolean is_white, String file_path, Board board){
         super(x, y, is_white, file_path, board);
     }
 
-    @Override
+    //@Override
     public boolean canMove(int destination_x, int destination_y){
         // reminder can move as many squares as he wants either forward, or sideways without jumping any pieces
         // This Prevents the Rook from taking his own pieces.
@@ -23,7 +23,7 @@ public class Rook extends Piece{
         }
 
         // This keeps the rook moving in a straight line as its piece only can.
-        if(this.getX() != destination_x && getY() != destination_y)
+        if(getX() != destination_x && getY() != destination_y)
             return false;
 
         // This keeps the rook from jump over other piece as a Rook can not do that.
@@ -36,6 +36,8 @@ public class Rook extends Piece{
             direction = "east";
         else if(destination_x < getX())
             direction = "west";
+
+        System.out.println(direction);
 
         if(direction.equals("south")){
             int spaces_to_move = Math.abs(destination_y - getY());

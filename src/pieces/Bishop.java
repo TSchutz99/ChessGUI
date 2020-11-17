@@ -12,8 +12,40 @@ public class Bishop extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
         // reminder can move as many squares diagonally as it wants without jumping over another piece
+        // This Prevents the Bishop from taking his own pieces.
+        Piece possiblePiece = board.getPiece(destination_x, destination_y);
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && isWhite())
+                return false;
+            if(possiblePiece.isBlack() && isBlack())
+                return false;
+        }
+
+        // This keeps the Bishop moving in a diagonal lines as its piece only can, and from jumping other pieces.
+        String direction = "";
+        if(this.getX() > destination_x && this.getY() > destination_y)
+            direction = "north-west";
+        else if(this.getX() > destination_x && this.getY() < destination_y)
+            direction = "south-west";
+        else if(this.getX() < destination_x && this.getY() < destination_y)
+            direction = "south-east";
+        else if(this.getX() < destination_x && this.getY() > destination_y)
+            direction = "north-east";
+
+        System.out.println(direction);
+
+        if(direction.equals("north-west")){
+            int distance = getX() - destination_x;
+
+            if(destination_x == getX() - distance || destination_y == getY() - distance)
+                for(int i = 1; i < distance; i++) {
+                    Piece p = board.getPiece(getX() - i, getY() - i);
+
+                    if(p != null)
+                        return false;
+                }
+        }
 
         return true;
     }
