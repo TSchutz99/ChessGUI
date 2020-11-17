@@ -48,7 +48,7 @@ public class Rook extends Piece{
                     return false;
             }
         }
-        if(direction.equals("north")){
+        else if(direction.equals("north")){
             int spaces_to_move = Math.abs(destination_y - getY());
 
             for(int i = 1; i < spaces_to_move; i++){
@@ -58,7 +58,7 @@ public class Rook extends Piece{
                     return false;
             }
         }
-        if(direction.equals("east")){
+        else if(direction.equals("east")){
             int spaces_to_move = Math.abs(destination_x - getX());
 
             for(int i = 1; i < spaces_to_move; i++){
@@ -68,7 +68,7 @@ public class Rook extends Piece{
                     return false;
             }
         }
-        if(direction.equals("west")){
+        else if(direction.equals("west")){
             int spaces_to_move = Math.abs(destination_x - getX());
 
             for(int i = 1; i < spaces_to_move; i++){
