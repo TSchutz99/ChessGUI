@@ -59,11 +59,22 @@ public class Bishop extends Piece{
                 }
         }
         else if(direction.equals("south-east")){
-            int distance = getX() - destination_x;
+            int distance = destination_x - getX();
 
             if(destination_x == getX() + distance || destination_y == getY() + distance)
                 for(int i = 1; i < distance; i++) {
                     Piece p = board.getPiece(getX() + i, getY() + i);
+
+                    if(p != null)
+                        return false;
+                }
+        }
+        else if(direction.equals("north-east")){
+            int distance = destination_x - getX();
+
+            if(destination_x == getX() + distance || destination_y == getY() - distance)
+                for(int i = 1; i < distance; i++) {
+                    Piece p = board.getPiece(getX() + i, getY() - i);
 
                     if(p != null)
                         return false;
