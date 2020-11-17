@@ -44,6 +44,8 @@ public class Rook extends Piece{
             for(int i = 0; i < spaces_to_move; i++){
                 Piece p = board.getPiece(getX(), getY() + i);
 
+                if(p != null)
+                    return false;
             }
         }
 
