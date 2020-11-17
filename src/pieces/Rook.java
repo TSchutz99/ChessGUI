@@ -15,12 +15,18 @@ public class Rook extends Piece{
         // reminder can move as many squares as he wants either forward, or sideways without jumping any pieces
         Piece possiblePiece = board.getPiece(destination_x, destination_y);
 
+        // This Prevents the Rook from taking his own pieces
         if(possiblePiece != null) {
             if(possiblePiece.isWhite() && this.isWhite())
                 return false;
             if(possiblePiece.isBlack() && this.isBlack())
                 return false;
         }
+
+        // This keeps the rook moving in a straight line as its piece only can
+        if(this.getX() != destination_x || this.getY() != destination_y)
+            return false;
+
         return true;
     }
 }
