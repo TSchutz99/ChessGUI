@@ -37,7 +37,8 @@ public class Rook extends Piece{
         else if(destination_x < getX())
             direction = "west";
 
-        System.out.println(direction);
+        // For test proposes
+        // System.out.println(direction);
 
         if(direction.equals("south")){
             int spaces_to_move = Math.abs(destination_y - getY());
