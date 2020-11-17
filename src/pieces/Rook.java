@@ -12,9 +12,15 @@ public class Rook extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
         // reminder can move as many squares as he wants either forward, or sideways without jumping any pieces
+        Piece possiblePiece = board.getPiece(destination_x, destination_y);
 
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && this.isWhite())
+                return false;
+            if(possiblePiece.isBlack() && this.isBlack())
+                return false;
+        }
         return true;
     }
 }
