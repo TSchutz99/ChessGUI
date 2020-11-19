@@ -28,6 +28,8 @@ public class Rook extends Piece{
 
         // This keeps the rook from jump over other piece as a Rook can not do that.
         String direction = "";
+        int distance;
+
         if(destination_y > getY())
             direction = "south";
         else if(destination_y < getY())
@@ -41,9 +43,9 @@ public class Rook extends Piece{
         // System.out.println(direction);
 
         if(direction.equals("south")){
-            int spaces_to_move = Math.abs(destination_y - getY());
+            distance = Math.abs(destination_y - getY());
 
-            for(int i = 1; i < spaces_to_move; i++){
+            for(int i = 1; i < distance; i++){
                 Piece p = board.getPiece(getX(), getY() + i);
 
                 if(p != null)
@@ -51,9 +53,9 @@ public class Rook extends Piece{
             }
         }
         else if(direction.equals("north")){
-            int spaces_to_move = Math.abs(destination_y - getY());
+            distance = Math.abs(destination_y - getY());
 
-            for(int i = 1; i < spaces_to_move; i++){
+            for(int i = 1; i < distance; i++){
                 Piece p = board.getPiece(getX(), getY() - i);
 
                 if(p != null)
@@ -61,9 +63,9 @@ public class Rook extends Piece{
             }
         }
         else if(direction.equals("east")){
-            int spaces_to_move = Math.abs(destination_x - getX());
+            distance = Math.abs(destination_x - getX());
 
-            for(int i = 1; i < spaces_to_move; i++){
+            for(int i = 1; i < distance; i++){
                 Piece p = board.getPiece(getX() + i, getY());
 
                 if(p != null)
@@ -71,9 +73,9 @@ public class Rook extends Piece{
             }
         }
         else if(direction.equals("west")){
-            int spaces_to_move = Math.abs(destination_x - getX());
+            distance = Math.abs(destination_x - getX());
 
-            for(int i = 1; i < spaces_to_move; i++){
+            for(int i = 1; i < distance; i++){
                 Piece p = board.getPiece(getX() - i, getY());
 
                 if(p != null)

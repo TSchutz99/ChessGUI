@@ -27,6 +27,8 @@ public class Bishop extends Piece{
             return false;
 
         String direction = "";
+        int distance;
+
         if(getX() > destination_x && getY() > destination_y)
             direction = "north-west";
         else if(getX() > destination_x && getY() < destination_y)
@@ -40,7 +42,7 @@ public class Bishop extends Piece{
         // System.out.println(direction);
 
         if(direction.equals("north-west")){
-            int distance = getX() - destination_x;
+            distance = Math.abs(getX() - destination_x);
 
             if(destination_x != getX() - distance || destination_y != getY() - distance)
                 return false;
@@ -53,7 +55,7 @@ public class Bishop extends Piece{
             }
         }
         else if(direction.equals("south-west")){
-            int distance = getX() - destination_x;
+            distance = Math.abs(getX() - destination_x);
 
             if(destination_x != getX() - distance || destination_y != getY() + distance)
                 return false;
@@ -66,7 +68,7 @@ public class Bishop extends Piece{
             }
         }
         else if(direction.equals("south-east")){
-            int distance = destination_x - getX();
+            distance = Math.abs(destination_x - getX());
 
             if(destination_x != getX() + distance || destination_y != getY() + distance)
                 return false;
@@ -79,7 +81,7 @@ public class Bishop extends Piece{
             }
         }
         else if(direction.equals("north-east")){
-            int distance = destination_x - getX();
+            distance = Math.abs(destination_x - getX());
 
             if(destination_x != getX() + distance || destination_y != getY() - distance)
                 return false;
