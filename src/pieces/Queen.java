@@ -33,7 +33,7 @@ public class Queen extends Piece{
             direction = "south";
         else if(destination_y < getY() && destination_x == getX())
             direction = "north";
-        else if(destination_x > getX() && destination_y == getY())  // East and west movements not working
+        else if(destination_x > getX() && destination_y == getY())
             direction = "east";
         else if(destination_x < getX() && destination_y == getY())
             direction = "west";
