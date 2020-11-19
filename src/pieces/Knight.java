@@ -3,7 +3,7 @@ import board.Board;
 /* Knight.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish:
+ * Finish: 19/11/2020
  */
 public class Knight extends Piece{
     public Knight(int x, int y, boolean is_white, String file_path, Board board){

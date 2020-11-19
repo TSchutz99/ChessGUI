@@ -12,8 +12,7 @@ public class Queen extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
-        // reminder Queen can move backward, sideways, or diagonally, without jumping over any pieces.
+        // Reminder Queen can move backward, sideways, or diagonally, without jumping over any pieces.
 
 
         return true;
