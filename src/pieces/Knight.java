@@ -25,6 +25,12 @@ public class Knight extends Piece{
                 return false;
         }
 
+        // This following keeps the Knight moving in all the variations of the L shape possible
+        if(((destination_y != getY() - 2 && destination_y != getY() + 2) || (destination_x != getX() - 1 && destination_x != getX() + 1)) &&
+           ((destination_x != getX() - 2 && destination_x != getX() + 2) || (destination_y != getY() - 1 && destination_y != getY() + 1)))
+            return false;
+
+
         return true;
     }
 }
