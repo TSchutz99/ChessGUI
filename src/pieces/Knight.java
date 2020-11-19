@@ -30,7 +30,6 @@ public class Knight extends Piece{
            ((destination_x != getX() - 2 && destination_x != getX() + 2) || (destination_y != getY() - 1 && destination_y != getY() + 1)))
             return false;
 
-
         return true;
     }
 }
