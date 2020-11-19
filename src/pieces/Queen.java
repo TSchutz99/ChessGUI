@@ -13,6 +13,16 @@ public class Queen extends Piece{
     @Override
     public boolean canMove(int destination_x, int destination_y){
         // Reminder Queen can move backward, sideways, or diagonally, without jumping over any pieces.
+        // This Prevents the Queen from taking her own pieces.
+        Piece possiblePiece = board.getPiece(destination_x, destination_y);
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && isWhite())
+                return false;
+            if(possiblePiece.isBlack() && isBlack())
+                return false;
+        }
+
+        // This keeps the Queen moving in a straight or diagonal lines as this piece only can.
 
 
         return true;
