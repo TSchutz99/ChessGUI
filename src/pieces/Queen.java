@@ -23,7 +23,7 @@ public class Queen extends Piece{
         }
 
         // This keeps the Queen moving in a straight or diagonal lines as this piece only can.
-        if(getX() != destination_x && getY() != destination_y && getX() == destination_x || getY() == destination_y)
+        if((getX() != destination_x && getY() != destination_y) && (getX() == destination_x || getY() == destination_y))
             return false;
 
         String direction = "";
@@ -33,7 +33,7 @@ public class Queen extends Piece{
             direction = "south";
         else if(destination_y < getY() && destination_x == getX())
             direction = "north";
-        else if(destination_x > getX() && destination_y == getY())
+        else if(destination_x > getX() && destination_y == getY())  // East and west movements not working
             direction = "east";
         else if(destination_x < getX() && destination_y == getY())
             direction = "west";
