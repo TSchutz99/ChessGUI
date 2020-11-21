@@ -23,10 +23,30 @@ public class Pawn extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
         // reminder if pawn has not moved yet, it can move two spaces forward. Otherwise, it only moves one space.
         // When not attacking it can only move forward.
         // When attacking it can only move diagonally forward.
+
+        // This Prevents the Pawn from taking his own pieces.
+        Piece possiblePiece = board.getPiece(destination_x, destination_y);
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && isWhite())
+                return false;
+            if(possiblePiece.isBlack() && isBlack())
+                return false;
+        }
+
+        //
+        if(getHas_moved() == false){
+            if(isWhite() && (destination_y != getY() + 1 && destination_y != getY() + 2)){
+                setHas_moved(true);
+                return false;
+            }
+            else if(isBlack() && (destination_y != getY() - 1 && destination_y != getY() - 2)){
+                setHas_moved(true);
+                return false;
+            }
+        }
 
         return true;
     }
