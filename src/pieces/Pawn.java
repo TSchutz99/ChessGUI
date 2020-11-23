@@ -39,15 +39,14 @@ public class Pawn extends Piece{
         //
         if(getHas_moved() == false){
             if(isWhite() && (destination_y != getY() + 1 && destination_y != getY() + 2)){
-                setHas_moved(true);
                 return false;
             }
             else if(isBlack() && (destination_y != getY() - 1 && destination_y != getY() - 2)){
-                setHas_moved(true);
                 return false;
             }
         }
 
+        setHas_moved(true);
         return true;
     }
 }
