@@ -38,10 +38,18 @@ public class Pawn extends Piece{
 
         //
         if(getHas_moved() == false){
-            if(isWhite() && (destination_y != getY() + 1 && destination_y != getY() + 2)){
+            if(isWhite() && (destination_y != getY() + 1 && destination_y != getY() + 2) || destination_x != getX()){
                 return false;
             }
-            else if(isBlack() && (destination_y != getY() - 1 && destination_y != getY() - 2)){
+            else if(isBlack() && (destination_y != getY() - 1 && destination_y != getY() - 2) || destination_x != getX()){
+                return false;
+            }
+        }
+        else if(getHas_moved() == true){
+            if(isWhite() && (destination_y != getY() + 1) || destination_x != getX()){
+                return false;
+            }
+            else if(isBlack() && (destination_y != getY() - 1) || destination_x != getX()){
                 return false;
             }
         }
