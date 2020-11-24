@@ -36,23 +36,44 @@ public class Pawn extends Piece{
                 return false;
         }
 
-        //
+        // The following controls the pawns movements and ensure that it can take piece properly
         if(getHas_moved() == false){
-            if(isWhite() && (destination_y != getY() + 1 && destination_y != getY() + 2) || destination_x != getX()){
-                return false;
+            if(isWhite() && (destination_y == getY() + 1 || destination_y == getY() + 2) && destination_x == getX()){
+                setHas_moved(true);
+                return true;
             }
-            else if(isBlack() && (destination_y != getY() - 1 && destination_y != getY() - 2) || destination_x != getX()){
-                return false;
+            if(isWhite() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() + 1 && possiblePiece != null) {
+                setHas_moved(true);
+                return true;
+            }
+            else if(isBlack() && (destination_y == getY() - 1 || destination_y == getY() - 2) && destination_x == getX()){
+                setHas_moved(true);
+                return true;
+            }
+            if(isBlack() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() - 1 && possiblePiece != null) {
+                setHas_moved(true);
+                return true;
             }
         }
         else if(getHas_moved() == true){
-            if(isWhite() && (destination_y != getY() + 1 || destination_x != getX()))
-                return false;
-            else if(isBlack() && (destination_y != getY() - 1 || destination_x != getX()) )
-                return false;
+            if(isWhite() && (destination_y == getY() + 1 && destination_x == getX())){
+                setHas_moved(true);
+                return true;
+            }
+            if(isWhite() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() + 1 && possiblePiece != null) {
+                setHas_moved(true);
+                return true;
+            }
+            else if(isBlack() && (destination_y == getY() - 1 && destination_x == getX()) ){
+                setHas_moved(true);
+                return true;
+            }
+            if(isBlack() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() - 1 && possiblePiece != null) {
+                setHas_moved(true);
+                return true;
+            }
         }
 
-        setHas_moved(true);
-        return true;
+        return false;
     }
 }
