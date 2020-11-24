@@ -35,6 +35,13 @@ public class Board extends JComponent{
     private final String board_file_path = "images" + File.separator + "board.png";
     private final String active_square_file_path = "images" + File.separator + "active_square.png"; // Will be used later
 
+    public ArrayList<Piece> getBlack_Pieces() {
+        return Black_Pieces;
+    }
+    public ArrayList<Piece> getWhite_Pieces() {
+        return White_Pieces;
+    }
+
     public void initGrid(){
         for(int i = 0; i < rows; i++)
             for(int j = 0; j < cols; j++)

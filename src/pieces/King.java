@@ -19,11 +19,11 @@ public class King extends Piece{
            destination_y != getY() && destination_y != getX() - 1 && destination_y != getY() + 1)
             return false;
 
-        if(isWhite())
-            for(Piece p : Black_Pieces){
-                if(p.canMove(destination_x, destination_y))
-                    return false;
-            }
+        //if(isWhite())
+        //    for(Piece p : Black_Pieces){
+        //        if(p.canMove(destination_x, destination_y))
+        //            return false;
+        //    }
         return true;
     }
 }
