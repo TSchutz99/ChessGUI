@@ -7,10 +7,12 @@ import board.Board;
  */
 public class Pawn extends Piece{
     private boolean has_moved;
+    //private boolean can_promote;
 
     public Pawn(int x, int y, boolean is_white, String file_path, Board board){
         super(x, y, is_white, file_path, board);
         has_moved = false;
+        //can_promote = false;
     }
 
     public void setHas_moved(boolean has_moved) {
@@ -39,37 +41,29 @@ public class Pawn extends Piece{
         // The following controls the pawns movements and ensure that it can take piece properly
         if(getHas_moved() == false){
             if(isWhite() && (destination_y == getY() + 1 || destination_y == getY() + 2) && destination_x == getX()){
-                setHas_moved(true);
                 return true;
             }
-            if(isWhite() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() + 1 && possiblePiece != null) {
-                setHas_moved(true);
+            if(isWhite() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() + 1 && possiblePiece != null) {//setHas_moved(true);
                 return true;
             }
             else if(isBlack() && (destination_y == getY() - 1 || destination_y == getY() - 2) && destination_x == getX()){
-                setHas_moved(true);
                 return true;
             }
             if(isBlack() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() - 1 && possiblePiece != null) {
-                setHas_moved(true);
                 return true;
             }
         }
         else if(getHas_moved() == true){
             if(isWhite() && (destination_y == getY() + 1 && destination_x == getX())){
-                setHas_moved(true);
                 return true;
             }
             if(isWhite() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() + 1 && possiblePiece != null) {
-                setHas_moved(true);
                 return true;
             }
             else if(isBlack() && (destination_y == getY() - 1 && destination_x == getX()) ){
-                setHas_moved(true);
                 return true;
             }
             if(isBlack() && (destination_x == getX() - 1 || destination_x == getX() + 1) && destination_y == getY() - 1 && possiblePiece != null) {
-                setHas_moved(true);
                 return true;
             }
         }
