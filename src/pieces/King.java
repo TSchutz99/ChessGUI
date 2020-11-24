@@ -12,19 +12,28 @@ public class King extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // reminder can move one square up, right, left, or down, or diagonally
+        // reminder can move one square in any direction
         // and can not put himself in danger.
+        // This Prevents the King from taking his own pieces.
+      /*Piece possiblePiece = board.getPiece(destination_x, destination_y);
+        if(possiblePiece != null) {
+            if(possiblePiece.isWhite() && isWhite())
+                return false;
+            if(possiblePiece.isBlack() && isBlack())
+                return false;
+        }*/
 
+        // This keeps the king move only one space and from putting himself in check
         if(destination_x != getX() && destination_x != getX() - 1 && destination_x != getX() + 1 ||
            destination_y != getY() && destination_y != getX() - 1 && destination_y != getY() + 1)
             return false;
 
-        /*if(isWhite())
+      /*if(isWhite())
             for(Piece p : board.getBlack_Pieces()){
                 if(p.canMove(destination_x, destination_y))
                     return false;
             }
-        if(isBlack())
+        else if(isBlack())
             for(Piece p : board.getWhite_Pieces()){
                 if(p.canMove(destination_x, destination_y))
                     return false;
