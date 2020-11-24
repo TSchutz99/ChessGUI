@@ -12,9 +12,12 @@ public class King extends Piece{
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // rules to be written here.
         // reminder can move one square up, right, left, or down, or diagonally
         // and can not put himself in danger.
+
+        if(destination_x != getX() && destination_x != getX() - 1 && destination_x != getX() + 1 ||
+           destination_y != getY() && destination_y != getX() - 1 && destination_y != getY() + 1)
+            return false;
 
         return true;
     }
