@@ -1,6 +1,7 @@
 package board;
 
 import pieces.*;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -11,13 +12,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static board.ChessGUI.black_player;
+import static board.ChessGUI.white_player;
+
 /* board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish:
  */
 public class Board extends JComponent{
-    public int turnCounter = 0;
+    public static int turnCounter = 0;
     private static final Image NULL_IMAGE = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
 
     private final int Square_Width = 65;
@@ -114,6 +118,11 @@ public class Board extends JComponent{
         Piece_Graphics.clear();
         Static_Shapes.clear();
         // initGrid();
+
+        if(turnCounter % 2 == 1 && turnCounter != 0)
+            BoardFrame.label.setText("Black turn: " + black_player);
+        else if(turnCounter % 2 == 0 && turnCounter != 0)
+            BoardFrame.label.setText("White turn: " + white_player);
 
         Image board = loadImage(board_file_path);
 

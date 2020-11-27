@@ -3,7 +3,7 @@ import board.Board;
 /* Pawn.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish:
+ * Finish: 24/11/2020
  */
 public class Pawn extends Piece{
     private boolean has_moved;
