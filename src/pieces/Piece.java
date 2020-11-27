@@ -3,7 +3,7 @@ import board.Board;
 /* Piece.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish:
+ * Finish: 13/11/2020
  */
 public class Piece {
     private int x;
