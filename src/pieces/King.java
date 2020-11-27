@@ -43,9 +43,8 @@ public class King extends Piece{
          *****************************************************/
 
         //code
-
-        System.out.println("current x: " + getX() + "  current y: " + getY());
-        System.out.println("destination x: " + destination_x + "  destination y: " + destination_y);
+        //System.out.println("current x: " + getX() + "  current y: " + getY());
+        //System.out.println("destination x: " + destination_x + "  destination y: " + destination_y);
 
         if(Math.abs(destination_x - getX()) > 1 || Math.abs(destination_y - getY()) > 1){ //End of [non-original or refactored] code
             if(isWhite())
