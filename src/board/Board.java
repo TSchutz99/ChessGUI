@@ -194,6 +194,10 @@ public class Board extends JComponent{
                         White_Pieces.remove(clicked_Piece);
                     else
                         Black_Pieces.remove(clicked_Piece);
+
+                    if(clicked_Piece.getClass().equals(King.class)){
+                        // BoardFrame.label.setText("Black turn: " + black_player);
+                    }
                 }
                 // Do move
                 Active_Piece.setX(Clicked_Column);
