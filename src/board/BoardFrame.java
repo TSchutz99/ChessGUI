@@ -15,7 +15,7 @@ public class BoardFrame extends JFrame{
     Component component;
     public static JLabel label;
     public BoardFrame(){
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Chess");
         setResizable(false);
         component = new Board();

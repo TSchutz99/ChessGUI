@@ -194,10 +194,6 @@ public class Board extends JComponent{
                         White_Pieces.remove(clicked_Piece);
                     else
                         Black_Pieces.remove(clicked_Piece);
-
-                    if(clicked_Piece.getClass().equals(King.class)){
-                        // BoardFrame.label.setText("Black turn: " + black_player);
-                    }
                 }
                 // Do move
                 Active_Piece.setX(Clicked_Column);
@@ -207,6 +203,28 @@ public class Board extends JComponent{
                 if(Active_Piece.getClass().equals(Pawn.class)){
                     Pawn castedPawn = (Pawn)(Active_Piece);
                     castedPawn.setHas_moved(true);
+                }
+
+                if(clicked_Piece != null && clicked_Piece.getClass().equals(King.class)){
+                    drawBoard();
+
+                    String match_info;
+                    if(clicked_Piece.isWhite()){
+                        JOptionPane.showMessageDialog(null, "Black - " + black_player + " Wins", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+
+                        match_info = "Black: " + black_player + " beats White: " + white_player +
+                                     " - Black wins in " + (turnCounter / 2 + 1)  + " moves.";
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "White - " + white_player + " Wins", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+
+                        match_info = "White: " + white_player + " beats Black: " + black_player +
+                                " - White wins in " + (turnCounter / 2 + 1) + " moves.";;
+                    }
+
+                    JOptionPane.showMessageDialog(null, match_info, "Match Details", JOptionPane.INFORMATION_MESSAGE);
+
+                    System.exit(0);
                 }
 
                 Active_Piece = null;
