@@ -205,6 +205,7 @@ public class Board extends JComponent{
                     castedPawn.setHas_moved(true);
                 }
 
+                // If piece takes an enemy King Game Over, Match Details recorded.
                 if(clicked_Piece != null && clicked_Piece.getClass().equals(King.class)){
                     drawBoard();
 
