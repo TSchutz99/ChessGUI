@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>pieces</OriginalElement>
+  <nodes>
+    <node x="272.0" y="312.5">pieces.King</node>
+    <node x="1343.0" y="312.5">pieces.Rook</node>
+    <node x="805.0" y="301.0">pieces.Pawn</node>
+    <node x="671.625" y="0.0">pieces.Piece</node>
+    <node x="533.0" y="312.5">pieces.Queen</node>
+    <node x="1070.0" y="312.5">pieces.Bishop</node>
+    <node x="0.0" y="312.5">pieces.Knight</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pieces.Rook" target="pieces.Piece">
+      <point x="61.0" y="-38.5" />
+      <point x="1526.0" y="231.0" />
+      <point x="906.4166666666667" y="231.0" />
+      <point x="112.29166666666674" y="105.5" />
+    </edge>
+    <edge source="pieces.Knight" target="pieces.Piece">
+      <point x="-63.0" y="-38.5" />
+      <point x="63.0" y="231.0" />
+      <point x="681.8333333333333" y="231.0" />
+      <point x="-112.29166666666663" y="105.5" />
+    </edge>
+    <edge source="pieces.Queen" target="pieces.Piece">
+      <point x="63.0" y="-38.5" />
+      <point x="722.0" y="281.0" />
+      <point x="783.9166666666667" y="281.0" />
+      <point x="-10.208333333333258" y="105.5" />
+    </edge>
+    <edge source="pieces.Bishop" target="pieces.Piece">
+      <point x="63.25" y="-38.5" />
+      <point x="1259.75" y="251.0" />
+      <point x="865.5833333333335" y="251.0" />
+      <point x="71.45833333333348" y="105.5" />
+    </edge>
+    <edge source="pieces.Pawn" target="pieces.Piece">
+      <point x="61.25" y="-50.0" />
+      <point x="988.75" y="271.0" />
+      <point x="824.75" y="271.0" />
+      <point x="30.625" y="105.5" />
+    </edge>
+    <edge source="pieces.King" target="pieces.Piece">
+      <point x="60.25" y="-38.5" />
+      <point x="452.75" y="261.0" />
+      <point x="743.0833333333333" y="261.0" />
+      <point x="-51.04166666666663" y="105.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8332296204107031" x="793.5" y="200.5" />
+  <SelectedNodes>
+    <node>pieces.Knight</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
