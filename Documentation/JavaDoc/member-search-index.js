@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"pieces","c":"Pawn","l":"canMove(int, int)","url":"canMove(int,int)"},{"p":"pieces","c":"Pawn","l":"getHas_moved()"},{"p":"pieces","c":"Pawn","l":"Pawn(int, int, boolean, String, Board)","url":"%3Cinit%3E(int,int,boolean,java.lang.String,board.Board)"},{"p":"pieces","c":"Pawn","l":"setHas_moved(boolean)"}]
