@@ -46,7 +46,8 @@ public class Pawn extends Piece{
     }
 
     /**
-     * Method to get the possibility if a Pawn can move to a specified destination
+     * Method to get the possibility if a Pawn can move to a specified destination and
+     * if there is a piece at that destination if the Pawn can take that piece
      * @return a boolean value specifying if Pawn can move
      */
     @Override
