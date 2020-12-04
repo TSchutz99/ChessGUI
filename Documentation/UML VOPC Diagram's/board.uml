@@ -3,83 +3,83 @@
   <ID>JAVA</ID>
   <OriginalElement>board</OriginalElement>
   <nodes>
-    <node x="71.21458333333334" y="365.0">board.Board</node>
-    <node x="555.0" y="0.0">board.Records</node>
-    <node x="0.0" y="171.5">board.ChessGUI</node>
-    <node x="214.0" y="149.0">board.Board.DrawingImage</node>
-    <node x="106.30416666666667" y="1000.0">board.Board.DrawingShape</node>
-    <node x="50.54583333333332" y="0.0">board.BoardFrame</node>
+    <node x="138.33333333333331" y="364.0">board.Board</node>
+    <node x="587.4401515151515" y="0.0">board.Records</node>
+    <node x="360.4401515151515" y="170.5">board.ChessGUI</node>
+    <node x="0.0" y="148.0">board.Board.DrawingImage</node>
+    <node x="114.59848484848484" y="0.0">board.Board.DrawingShape</node>
+    <node x="340.8151515151515" y="999.0">board.BoardFrame</node>
   </nodes>
   <notes />
   <edges>
     <edge source="board.BoardFrame" target="board.ChessGUI">
-      <point x="0.0" y="49.5" />
-      <point x="138.54583333333332" y="124.0" />
-      <point x="151.66666666666663" y="124.0" />
-      <point x="60.66666666666663" y="-60.5" />
+      <point x="35.200000000000045" y="-49.5" />
+      <point x="464.0151515151515" y="334.0" />
+      <point x="474.1901515151515" y="334.0" />
+      <point x="22.75" y="60.5" />
     </edge>
     <edge source="board.BoardFrame" target="board.Board">
-      <point x="70.40000000000003" y="49.5" />
-      <point x="208.94583333333335" y="124.0" />
-      <point x="203.5" y="124.0" />
-      <point x="203.5" y="340.0" />
-      <point x="209.71458333333334" y="340.0" />
-      <point x="0.0" y="-292.5" />
+      <point x="-70.39999999999998" y="-49.5" />
+      <point x="358.41515151515154" y="979.0" />
+      <point x="207.58333333333331" y="979.0" />
+      <point x="-69.25" y="292.5" />
     </edge>
     <edge source="board.ChessGUI" target="board.BoardFrame">
-      <point x="0.0" y="-60.5" />
-      <point x="91.0" y="124.0" />
-      <point x="103.34583333333333" y="124.0" />
-      <point x="-35.19999999999999" y="49.5" />
+      <point x="68.25000000000007" y="60.5" />
+      <point x="519.6901515151516" y="344.0" />
+      <point x="475.0151515151515" y="344.0" />
+      <point x="475.0151515151515" y="979.0" />
+      <point x="499.2151515151515" y="979.0" />
+      <point x="70.39999999999999" y="-49.5" />
     </edge>
     <edge source="board.Board" target="board.Board.DrawingImage">
-      <point x="55.39999999999998" y="-292.5" />
-      <point x="265.1145833333333" y="340.0" />
-      <point x="263.3333333333333" y="340.0" />
-      <point x="-98.66666666666667" y="83.0" />
+      <point x="-115.41666666666663" y="-292.5" />
+      <point x="161.41666666666669" y="344.0" />
+      <point x="74.0" y="344.0" />
+      <point x="-74.0" y="83.0" />
     </edge>
     <edge source="board.Board" target="board.Board.DrawingShape">
-      <point x="92.33333333333331" y="292.5" />
-      <point x="302.04791666666665" y="975.0" />
-      <point x="291.3041666666667" y="975.0" />
-      <point x="37.0" y="-49.0" />
+      <point x="69.25" y="-292.5" />
+      <point x="346.0833333333333" y="344.0" />
+      <point x="328.5" y="344.0" />
+      <point x="328.5" y="128.0" />
+      <point x="373.5984848484849" y="128.0" />
+      <point x="111.0" y="49.0" />
     </edge>
     <edge source="board.Board" target="board.BoardFrame">
-      <point x="-55.400000000000006" y="-292.5" />
-      <point x="154.31458333333333" y="340.0" />
-      <point x="192.5" y="340.0" />
-      <point x="192.5" y="124.0" />
-      <point x="173.7458333333333" y="124.0" />
-      <point x="35.19999999999999" y="49.5" />
+      <point x="69.25" y="292.5" />
+      <point x="346.0833333333333" y="969.0" />
+      <point x="393.6151515151515" y="969.0" />
+      <point x="-35.19999999999999" y="-49.5" />
     </edge>
     <edge source="board.Board.DrawingImage" target="board.Board.DrawingShape">
-      <point x="98.66666666666669" y="83.0" />
-      <point x="460.6666666666667" y="340.0" />
-      <point x="426.5958333333333" y="340.0" />
-      <point x="426.5958333333333" y="975.0" />
-      <point x="365.3041666666667" y="975.0" />
-      <point x="111.0" y="-49.0" />
+      <point x="0.0" y="-83.0" />
+      <point x="148.0" y="128.0" />
+      <point x="151.59848484848484" y="128.0" />
+      <point x="-111.0" y="49.0" />
     </edge>
     <edge source="board.Board.DrawingShape" target="board.Board">
-      <point x="-111.0" y="-49.0" />
-      <point x="143.30416666666667" y="975.0" />
-      <point x="117.38125000000002" y="975.0" />
-      <point x="-92.33333333333331" y="292.5" />
+      <point x="-37.0" y="49.0" />
+      <point x="225.59848484848484" y="128.0" />
+      <point x="306.5" y="128.0" />
+      <point x="306.5" y="334.0" />
+      <point x="253.75" y="334.0" />
+      <point x="-23.083333333333314" y="-292.5" />
     </edge>
     <edge source="board.Board.DrawingImage" target="board.Board">
-      <point x="0.0" y="83.0" />
-      <point x="362.0" y="340.0" />
-      <point x="320.51458333333335" y="340.0" />
-      <point x="110.80000000000001" y="-292.5" />
+      <point x="74.0" y="83.0" />
+      <point x="222.0" y="344.0" />
+      <point x="207.58333333333337" y="344.0" />
+      <point x="-69.24999999999994" y="-292.5" />
     </edge>
     <edge source="board.Board" target="board.ChessGUI">
-      <point x="-110.80000000000001" y="-292.5" />
-      <point x="98.91458333333333" y="340.0" />
-      <point x="91.0" y="340.0" />
-      <point x="0.0" y="60.5" />
+      <point x="115.41666666666669" y="-292.5" />
+      <point x="392.25" y="344.0" />
+      <point x="383.1901515151515" y="344.0" />
+      <point x="-68.25" y="60.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.4726522187822497" x="552.5" y="464.5" />
+  <settings layout="Hierarchic Group" zoom="0.4525691699604743" x="446.0" y="486.0" />
   <SelectedNodes>
     <node>board.ChessGUI</node>
   </SelectedNodes>
