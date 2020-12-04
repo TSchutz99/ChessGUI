@@ -38,7 +38,7 @@ public class Board extends JComponent implements Serializable{
     private final int cols = 8;
     private final Integer[][] BoardGrid;
     private final String board_file_path = "images" + File.separator + "board.png";
-    private final String active_square_file_path = "images" + File.separator + "active_square.png"; // Will be used later
+    private final String active_square_file_path = "images" + File.separator + "active_square.png";
 
     public ArrayList<Piece> getBlack_Pieces() {
         return Black_Pieces;
