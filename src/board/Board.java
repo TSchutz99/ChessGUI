@@ -254,13 +254,11 @@ public class Board extends JComponent implements Serializable{
     };
 
     private void adjustShapePositions(double dx, double dy){
-        // .adjustPosition() need to writ this
         Static_Shapes.get(0).adjustPosition(dx, dy);
         repaint();
     }
 
     private Image loadImage(String imageFile){
-        // https://www.w3schools.com/java/java_try_catch.asp
         try{
             return ImageIO.read(new File(imageFile));
         }
@@ -340,13 +338,33 @@ public class Board extends JComponent implements Serializable{
 
         @Override
         public void adjustPosition(double dx, double dy){
-            // https://docs.oracle.com/javase/7/docs/api/java/awt/geom/Rectangle2D.Double.html
+            /*****************************************************
+             *    Code from https://www.programcreek.com/java-api-examples/?class=java.awt.geom.Rectangle2D&method=setRect
+             *    Title:   King.Board, lines 353
+             *    Author: www.programcreek.com
+             *    Site owner/sponsor:  www.programcreek.com
+             *    Date: 12/11/2020
+             *    Code version:  NA
+             *    Availability:  NA
+             *
+             *    Site used to figure out how to get this to work
+             *****************************************************/
             rect.setRect(rect.getX() + dx, rect.getY() + dy, rect.getWidth(), rect.getHeight());
         }
 
         @Override
         public void draw(Graphics2D g2){
-            // https://docs.oracle.com/javase/7/docs/api/java/awt/Shape.html
+            /*****************************************************
+             *    Code from https://www.codota.com/code/java/methods/java.awt.Graphics/drawImage
+             *    Title:   King.Board, lines 368-370
+             *    Author: www.codota.com
+             *    Site owner/sponsor:  www.codota.com
+             *    Date: 13/11/2020
+             *    Code version:  NA
+             *    Availability:  NA
+             *
+             *    Site used to figure out how to get this to work
+             *****************************************************/
             Rectangle2D bounds = rect.getBounds2D();
             g2.drawImage(image, (int)bounds.getMinX(), (int)bounds.getMinY(), (int)bounds.getMaxX(), (int)bounds.getMaxY(),
                                             0, 0, image.getWidth(null), image.getHeight(null), null);
