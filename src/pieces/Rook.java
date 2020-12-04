@@ -1,5 +1,5 @@
-package ChessGUI.pieces;
-import ChessGUI.board.Board;
+package pieces;
+import board.Board;
 /* Rook.java
  * By: Faun Schutz
  * Start: 10/11/2020
@@ -12,8 +12,8 @@ public class Rook extends Piece{
 
     //@Override
     public boolean canMove(int destination_x, int destination_y){
-        // reminder can move as many squares as he wants either forward, or sideways without jumping any ChessGUI.pieces
-        // This Prevents the Rook from taking his own ChessGUI.pieces.
+        // reminder can move as many squares as he wants either forward, or sideways without jumping any pieces
+        // This Prevents the Rook from taking his own pieces.
         Piece possiblePiece = board.getPiece(destination_x, destination_y);
         if(possiblePiece != null) {
             if(possiblePiece.isWhite() && isWhite())

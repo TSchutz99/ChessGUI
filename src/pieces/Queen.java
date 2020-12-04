@@ -1,19 +1,19 @@
-package ChessGUI.pieces;
-import ChessGUI.board.Board;
-/* Bishop.java
+package pieces;
+import board.Board;
+/* King.java
  * By: Faun Schutz
  * Start: 10/11/2020
- * Finish: 17/11/2020
+ * Finish: 19/11/2020
  */
-public class Bishop extends Piece{
-    public Bishop(int x, int y, boolean is_white, String file_path, Board board){
+public class Queen extends Piece{
+    public Queen(int x, int y, boolean is_white, String file_path, Board board){
         super(x, y, is_white, file_path, board);
     }
 
     @Override
     public boolean canMove(int destination_x, int destination_y){
-        // reminder can move as many squares diagonally as it wants without jumping over another piece
-        // This Prevents the Bishop from taking his own ChessGUI.pieces.
+        // Reminder Queen can move backward, sideways, or diagonally, without jumping over any pieces.
+        // This Prevents the Queen from taking her own pieces.
         Piece possiblePiece = board.getPiece(destination_x, destination_y);
         if(possiblePiece != null) {
             if(possiblePiece.isWhite() && isWhite())
@@ -22,14 +22,22 @@ public class Bishop extends Piece{
                 return false;
         }
 
-        // This keeps the Bishop moving in diagonal lines as its piece only can and from jumping over other ChessGUI.pieces.
-        if(getX() == destination_x || getY() == destination_y)
+        // This keeps the Queen moving in a straight or diagonal lines as this piece only can.
+        if((getX() != destination_x && getY() != destination_y) && (getX() == destination_x || getY() == destination_y))
             return false;
 
         String direction = "";
         int distance;
 
-        if(getX() > destination_x && getY() > destination_y)
+        if(destination_y > getY() && destination_x == getX())
+            direction = "south";
+        else if(destination_y < getY() && destination_x == getX())
+            direction = "north";
+        else if(destination_x > getX() && destination_y == getY())
+            direction = "east";
+        else if(destination_x < getX() && destination_y == getY())
+            direction = "west";
+        else if(getX() > destination_x && getY() > destination_y)
             direction = "north-west";
         else if(getX() > destination_x && getY() < destination_y)
             direction = "south-west";
@@ -38,10 +46,47 @@ public class Bishop extends Piece{
         else if(getX() < destination_x && getY() > destination_y)
             direction = "north-east";
 
-        // For test proposes
-        // System.out.println(direction);
+        if(direction.equals("south")){
+            distance = Math.abs(destination_y - getY());
 
-        if(direction.equals("north-west")){
+            for(int i = 1; i < distance; i++){
+                Piece p = board.getPiece(getX(), getY() + i);
+
+                if(p != null)
+                    return false;
+            }
+        }
+        else if(direction.equals("north")){
+            distance = Math.abs(destination_y - getY());
+
+            for(int i = 1; i < distance; i++){
+                Piece p = board.getPiece(getX(), getY() - i);
+
+                if(p != null)
+                    return false;
+            }
+        }
+        else if(direction.equals("east")){
+            distance = Math.abs(destination_x - getX());
+
+            for(int i = 1; i < distance; i++){
+                Piece p = board.getPiece(getX() + i, getY());
+
+                if(p != null)
+                    return false;
+            }
+        }
+        else if(direction.equals("west")){
+            distance = Math.abs(destination_x - getX());
+
+            for(int i = 1; i < distance; i++){
+                Piece p = board.getPiece(getX() - i, getY());
+
+                if(p != null)
+                    return false;
+            }
+        }
+        else if(direction.equals("north-west")){
             distance = Math.abs(getX() - destination_x);
 
             if(destination_x != getX() - distance || destination_y != getY() - distance)

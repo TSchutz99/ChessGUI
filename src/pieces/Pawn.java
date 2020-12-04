@@ -1,5 +1,5 @@
-package ChessGUI.pieces;
-import ChessGUI.board.Board;
+package pieces;
+import board.Board;
 /* Pawn.java
  * By: Faun Schutz
  * Start: 10/11/2020
@@ -29,7 +29,7 @@ public class Pawn extends Piece{
         // When not attacking it can only move forward.
         // When attacking it can only move diagonally forward.
 
-        // This Prevents the Pawn from taking his own ChessGUI.pieces.
+        // This Prevents the Pawn from taking his own pieces.
         Piece possiblePiece = board.getPiece(destination_x, destination_y);
         if(possiblePiece != null) {
             if(possiblePiece.isWhite() && isWhite())

@@ -1,8 +1,8 @@
-package ChessGUI.board;
+package board;
 
 import javax.swing.*;
 
-/* ChessGUI.board.ChessGUI.java
+/* board.ChessGUI.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish: 04/12/2020
