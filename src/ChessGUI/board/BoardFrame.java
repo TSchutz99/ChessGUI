@@ -1,12 +1,12 @@
-package board;
+package ChessGUI.board;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static board.ChessGUI.black_player;
-import static board.ChessGUI.white_player;
+import static ChessGUI.board.ChessGUI.black_player;
+import static ChessGUI.board.ChessGUI.white_player;
 
-/* board.BoardFrame.java
+/* ChessGUI.board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish: 04/12/2020

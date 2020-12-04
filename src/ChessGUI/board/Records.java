@@ -1,10 +1,10 @@
-package board;
+package ChessGUI.board;
 
 import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
-/* board.Records.java
+/* ChessGUI.board.Records.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish: 04/12/2020

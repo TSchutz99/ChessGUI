@@ -1,6 +1,6 @@
-package board;
+package ChessGUI.board;
 
-import pieces.*;
+import ChessGUI.pieces.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import static board.ChessGUI.black_player;
-import static board.ChessGUI.white_player;
+import static ChessGUI.board.ChessGUI.black_player;
+import static ChessGUI.board.ChessGUI.white_player;
 
-/* board.BoardFrame.java
+/* ChessGUI.board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish: 04/12/2020
@@ -37,7 +37,7 @@ public class Board extends JComponent implements Serializable{
     private final int rows = 8;
     private final int cols = 8;
     private final Integer[][] BoardGrid;
-    private final String board_file_path = "images" + File.separator + "board.png";
+    private final String board_file_path = "images" + File.separator + "ChessGUI.board.png";
     private final String active_square_file_path = "images" + File.separator + "active_square.png";
 
     public ArrayList<Piece> getBlack_Pieces() {

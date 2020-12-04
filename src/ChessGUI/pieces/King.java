@@ -1,5 +1,5 @@
-package pieces;
-import board.Board;
+package ChessGUI.pieces;
+import ChessGUI.board.Board;
 /* King.java
  * By: Faun Schutz
  * Start: 10/11/2020
@@ -14,7 +14,7 @@ public class King extends Piece{
     public boolean canMove(int destination_x, int destination_y){
         // reminder can move one square in any direction
         // and can not put himself in danger.
-        // This Prevents the King from taking his own pieces.
+        // This Prevents the King from taking his own ChessGUI.pieces.
         Piece possiblePiece = board.getPiece(destination_x, destination_y);
         if(possiblePiece != null) {
             if(possiblePiece.isWhite() && isWhite())
