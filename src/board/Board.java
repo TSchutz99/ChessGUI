@@ -19,7 +19,7 @@ import static board.ChessGUI.white_player;
 /* board.BoardFrame.java
  * By: Faun Schutz
  * Start: 09/11/2020
- * Finish:
+ * Finish: 04/12/2020
  */
 public class Board extends JComponent implements Serializable{
     public static int turnCounter = 0;

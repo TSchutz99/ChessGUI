@@ -8,8 +8,6 @@ import java.util.ArrayList;
  * By: Faun Schutz
  * Start: 09/11/2020
  * Finish: 04/12/2020
- *
- *
  */
 public class Records {
     public static void save_match_details(String match_info){

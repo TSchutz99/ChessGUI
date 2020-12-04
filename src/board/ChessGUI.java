@@ -5,7 +5,7 @@ import javax.swing.*;
 /* board.ChessGUI.java
  * By: Faun Schutz
  * Start: 09/11/2020
- * Finish:
+ * Finish: 04/12/2020
  *
  *
  */
