@@ -10,6 +10,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static board.ChessGUI.black_player;
@@ -20,7 +21,7 @@ import static board.ChessGUI.white_player;
  * Start: 09/11/2020
  * Finish:
  */
-public class Board extends JComponent{
+public class Board extends JComponent implements Serializable{
     public static int turnCounter = 0;
     private static final Image NULL_IMAGE = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
 
@@ -161,36 +162,36 @@ public class Board extends JComponent{
         return null;
     }
 
-    private final MouseAdapter mouseAdapter = new MouseAdapter(){
+    private final MouseAdapter mouseAdapter = new MouseAdapter() {
         @Override
-        public void mouseClicked(MouseEvent e){
+        public void mouseClicked(MouseEvent e) {
 
         }
 
         @Override
-        public void mousePressed(MouseEvent e){
+        public void mousePressed(MouseEvent e) {
             int d_X = e.getX();
             int d_Y = e.getY();
             int Clicked_Row = d_Y / Square_Width;
             int Clicked_Column = d_X / Square_Width;
             boolean is_Whites_Turn = true;
-            if(turnCounter % 2 == 1)
+            if (turnCounter % 2 == 1)
                 is_Whites_Turn = false;
 
             Piece clicked_Piece = getPiece(Clicked_Column, Clicked_Row);
 
-            if(Active_Piece == null && clicked_Piece != null &&
+            if (Active_Piece == null && clicked_Piece != null &&
                     ((is_Whites_Turn && clicked_Piece.isWhite()) || (!is_Whites_Turn && clicked_Piece.isBlack())))
                 Active_Piece = clicked_Piece;
 
-            else if(Active_Piece != null && Active_Piece.getX() == Clicked_Column && Active_Piece.getY() == Clicked_Row)
+            else if (Active_Piece != null && Active_Piece.getX() == Clicked_Column && Active_Piece.getY() == Clicked_Row)
                 Active_Piece = null;
 
-            else if(Active_Piece != null && Active_Piece.canMove(Clicked_Column, Clicked_Row) &&
-                    ((is_Whites_Turn && Active_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))){
+            else if (Active_Piece != null && Active_Piece.canMove(Clicked_Column, Clicked_Row) &&
+                    ((is_Whites_Turn && Active_Piece.isWhite()) || (!is_Whites_Turn && Active_Piece.isBlack()))) {
                 // If piece is there, remove it so we can be there
-                if(clicked_Piece != null){
-                    if(clicked_Piece.isWhite())
+                if (clicked_Piece != null) {
+                    if (clicked_Piece.isWhite())
                         White_Pieces.remove(clicked_Piece);
                     else
                         Black_Pieces.remove(clicked_Piece);
@@ -200,30 +201,34 @@ public class Board extends JComponent{
                 Active_Piece.setY(Clicked_Row);
 
                 // If piece is a pawn set has_moved to true
-                if(Active_Piece.getClass().equals(Pawn.class)){
-                    Pawn castedPawn = (Pawn)(Active_Piece);
+                if (Active_Piece.getClass().equals(Pawn.class)) {
+                    Pawn castedPawn = (Pawn) (Active_Piece);
                     castedPawn.setHas_moved(true);
                 }
 
                 // If piece takes an enemy King Game Over, Match Details recorded.
-                if(clicked_Piece != null && clicked_Piece.getClass().equals(King.class)){
+                if (clicked_Piece != null && clicked_Piece.getClass().equals(King.class)) {
                     drawBoard();
 
                     String match_info;
-                    if(clicked_Piece.isWhite()){
+                    if (clicked_Piece.isWhite()) {
                         JOptionPane.showMessageDialog(null, "Black - " + black_player + " Wins", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 
                         match_info = "Black: " + black_player + " beats White: " + white_player +
-                                     " - Black wins in " + (turnCounter / 2 + 1)  + " moves.";
-                    }
-                    else{
+                                " - Black wins in " + (turnCounter / 2 + 1) + " moves.";
+                    } else {
                         JOptionPane.showMessageDialog(null, "White - " + white_player + " Wins", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 
                         match_info = "White: " + white_player + " beats Black: " + black_player +
-                                " - White wins in " + (turnCounter / 2 + 1) + " moves.";;
+                                " - White wins in " + (turnCounter / 2 + 1) + " moves.";
+                        ;
                     }
 
                     JOptionPane.showMessageDialog(null, match_info, "Match Details", JOptionPane.INFORMATION_MESSAGE);
+
+                    /* There is an issue with writing to the file with this and I did not have enough time left to figure it out.
+                     * I however kept the code for it and the file in for you to look at. */
+                    //Records.save_match_details(match_info);
 
                     System.exit(0);
                 }
@@ -236,13 +241,15 @@ public class Board extends JComponent{
         }
 
         @Override
-        public void mouseDragged(MouseEvent e){
+        public void mouseDragged(MouseEvent e) {
         }
+
         @Override
-        public void mouseReleased(MouseEvent e){
+        public void mouseReleased(MouseEvent e) {
         }
+
         @Override
-        public void mouseWheelMoved(MouseWheelEvent e){
+        public void mouseWheelMoved(MouseWheelEvent e) {
         }
     };
 

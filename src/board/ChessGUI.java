@@ -14,6 +14,10 @@ public class ChessGUI {
     public static String white_player, black_player;
     public static void main(String[] args){
 
+        /* There is an issue with loading from the file with this and I did not have enough time left to figure it out.
+         * I however kept the code for it and the file in for you to look at. */
+        //Records.load_previous_match_details();
+
         white_player = JOptionPane.showInputDialog("Who is playing white?");
         black_player = JOptionPane.showInputDialog("Who is playing black?");
 
